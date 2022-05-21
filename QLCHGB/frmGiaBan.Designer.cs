@@ -29,7 +29,7 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.rbnTen = new System.Windows.Forms.RadioButton();
             this.txtDonGia = new System.Windows.Forms.TextBox();
@@ -64,7 +64,7 @@ namespace QLCHGB
             this.cboSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Location = new System.Drawing.Point(401, 27);
+            this.cboSearch.Location = new System.Drawing.Point(401, 18);
             this.cboSearch.Name = "cboSearch";
             this.cboSearch.Size = new System.Drawing.Size(205, 27);
             this.cboSearch.TabIndex = 24;
@@ -74,14 +74,14 @@ namespace QLCHGB
             this.rbnTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbnTen.AutoSize = true;
             this.rbnTen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rbnTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbnTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnTen.Location = new System.Drawing.Point(718, 34);
+            this.rbnTen.Location = new System.Drawing.Point(718, 25);
             this.rbnTen.Name = "rbnTen";
-            this.rbnTen.Size = new System.Drawing.Size(84, 23);
+            this.rbnTen.Size = new System.Drawing.Size(85, 23);
             this.rbnTen.TabIndex = 3;
             this.rbnTen.Text = "Theo Tên";
             this.rbnTen.UseVisualStyleBackColor = true;
+            this.rbnTen.CheckedChanged += new System.EventHandler(this.rbnTen_CheckedChanged);
             // 
             // txtDonGia
             // 
@@ -113,9 +113,9 @@ namespace QLCHGB
             this.groupBox1.Controls.Add(this.rbnMa);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 217);
+            this.groupBox1.Location = new System.Drawing.Point(0, 212);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1283, 79);
+            this.groupBox1.Size = new System.Drawing.Size(1283, 62);
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
@@ -127,12 +127,13 @@ namespace QLCHGB
             this.btnTimKiem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Image = global::QLCHGB.Properties.Resources.search_free_icon_font;
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(297, 25);
+            this.btnTimKiem.Location = new System.Drawing.Point(297, 16);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(93, 30);
             this.btnTimKiem.TabIndex = 40;
             this.btnTimKiem.Text = "    Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // rbnMa
             // 
@@ -141,17 +142,19 @@ namespace QLCHGB
             this.rbnMa.Checked = true;
             this.rbnMa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.rbnMa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnMa.Location = new System.Drawing.Point(618, 34);
+            this.rbnMa.Location = new System.Drawing.Point(618, 25);
             this.rbnMa.Name = "rbnMa";
             this.rbnMa.Size = new System.Drawing.Size(83, 23);
             this.rbnMa.TabIndex = 2;
             this.rbnMa.TabStop = true;
             this.rbnMa.Text = "Theo Mã";
             this.rbnMa.UseVisualStyleBackColor = true;
+            this.rbnMa.CheckedChanged += new System.EventHandler(this.rbnMa_CheckedChanged);
             // 
             // txtTen
             // 
             this.txtTen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTen.Enabled = false;
             this.txtTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Location = new System.Drawing.Point(466, 107);
             this.txtTen.Name = "txtTen";
@@ -202,7 +205,7 @@ namespace QLCHGB
             this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1283, 229);
+            this.groupBox3.Size = new System.Drawing.Size(1283, 222);
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin chi tiết";
@@ -232,6 +235,7 @@ namespace QLCHGB
             this.btnHuy.TabIndex = 36;
             this.btnHuy.Text = " Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnLuu
             // 
@@ -247,6 +251,7 @@ namespace QLCHGB
             this.btnLuu.TabIndex = 35;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // btnXoa
             // 
@@ -262,6 +267,7 @@ namespace QLCHGB
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -324,33 +330,34 @@ namespace QLCHGB
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1283, 296);
+            this.panel1.Size = new System.Drawing.Size(1283, 274);
             this.panel1.TabIndex = 15;
             // 
             // dgvGiaBan
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvGiaBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            this.dgvGiaBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvGiaBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGiaBan.BackgroundColor = System.Drawing.Color.White;
             this.dgvGiaBan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvGiaBan.ColumnHeadersHeight = 40;
             this.dgvGiaBan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGiaBan.GridColor = System.Drawing.Color.DodgerBlue;
-            this.dgvGiaBan.Location = new System.Drawing.Point(0, 0);
+            this.dgvGiaBan.Location = new System.Drawing.Point(0, 274);
             this.dgvGiaBan.Name = "dgvGiaBan";
             this.dgvGiaBan.RowHeadersWidth = 51;
-            this.dgvGiaBan.Size = new System.Drawing.Size(1283, 652);
+            this.dgvGiaBan.Size = new System.Drawing.Size(1283, 378);
             this.dgvGiaBan.TabIndex = 16;
+            this.dgvGiaBan.Click += new System.EventHandler(this.dgvGiaBan_Click);
             // 
             // frmGiaBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 652);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvGiaBan);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmGiaBan";
             this.Load += new System.EventHandler(this.frmGiaBan_Load);
@@ -378,7 +385,6 @@ namespace QLCHGB
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgvGiaBan;
         private System.Windows.Forms.DateTimePicker dtpNgay;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnLuu;
@@ -387,5 +393,6 @@ namespace QLCHGB
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.ComboBox cboMaGB;
+        private System.Windows.Forms.DataGridView dgvGiaBan;
     }
 }

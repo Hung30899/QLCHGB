@@ -374,6 +374,7 @@ namespace QLCHGB
             this.dgvGB.BackgroundColor = System.Drawing.Color.White;
             this.dgvGB.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvGB.ColumnHeadersHeight = 40;
+            this.dgvGB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvGB.GridColor = System.Drawing.Color.DodgerBlue;
             this.dgvGB.Location = new System.Drawing.Point(0, 298);
             this.dgvGB.Name = "dgvGB";

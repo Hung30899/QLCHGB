@@ -48,8 +48,8 @@ namespace QLCHGB
             this.dgvPN = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
+            this.btnLuu = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.cboMaG = new System.Windows.Forms.ComboBox();
             this.txtTien = new System.Windows.Forms.TextBox();
@@ -142,7 +142,6 @@ namespace QLCHGB
             this.groupBox2.TabIndex = 25;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Thông tin chung";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // label1
             // 
@@ -301,8 +300,8 @@ namespace QLCHGB
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.button3);
-            this.groupBox3.Controls.Add(this.button2);
+            this.groupBox3.Controls.Add(this.btnHuy);
+            this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.txtDonGia);
             this.groupBox3.Controls.Add(this.cboMaG);
             this.groupBox3.Controls.Add(this.txtTien);
@@ -322,35 +321,36 @@ namespace QLCHGB
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin chi tiết";
             // 
-            // button3
+            // btnHuy
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::QLCHGB.Properties.Resources.cross_circle_free_icon_font;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(912, 14);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 29;
-            this.button3.Text = " Hủy";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnHuy.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHuy.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHuy.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Image = global::QLCHGB.Properties.Resources.cross_circle_free_icon_font;
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuy.Location = new System.Drawing.Point(912, 14);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(80, 30);
+            this.btnHuy.TabIndex = 29;
+            this.btnHuy.Text = " Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // button2
+            // btnLuu
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::QLCHGB.Properties.Resources.disk_free_icon_font;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(912, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 30);
-            this.button2.TabIndex = 28;
-            this.button2.Text = " Lưu";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLuu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLuu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::QLCHGB.Properties.Resources.disk_free_icon_font;
+            this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuu.Location = new System.Drawing.Point(912, 54);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(80, 30);
+            this.btnLuu.TabIndex = 28;
+            this.btnLuu.Text = " Lưu";
+            this.btnLuu.UseVisualStyleBackColor = true;
             // 
             // txtDonGia
             // 
@@ -511,7 +511,7 @@ namespace QLCHGB
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvPN);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPN";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -555,8 +555,8 @@ namespace QLCHGB
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblTien;
         private System.Windows.Forms.TextBox txtTongTien;

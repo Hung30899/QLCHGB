@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLCHGB.Class;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,14 +18,12 @@ namespace QLCHGB
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnHuy_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            frmDSPN frmDSPN = new frmDSPN();
+    
         }
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

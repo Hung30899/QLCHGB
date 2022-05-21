@@ -16,5 +16,14 @@ namespace QLCHGB
         {
             InitializeComponent();
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            frmMainMenu frmMainMenu = new frmMainMenu();
+            frmPN frmPN = new frmPN();
+            frmPN.MdiParent = this.ParentForm;
+            frmPN.Dock = DockStyle.Fill;
+            frmPN.Show();
+        }
     }
 }
