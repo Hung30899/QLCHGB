@@ -16,6 +16,9 @@ namespace QLCHGB
         DataTable tblPN;
         char btn;
         String rbn, soluongc;
+
+        public String strMaPN;
+        public Char flag;
         public frmDSPN()
         {
             InitializeComponent();
@@ -30,9 +33,17 @@ namespace QLCHGB
         }
 
         private void btnSua_Click(object sender, EventArgs e)
-        {              
+        {
+            if (cboMaPN.Text == "")
+            {
+                MessageBox.Show("Bạn chưa chọn phiếu nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            strMaPN = cboMaPN.Text.Trim();
             frmPN frmPN = new frmPN();
             frmPN.MdiParent = this.ParentForm;
+            frmPN.strMaPN = strMaPN;
+            frmPN.flag = 's';
             frmPN.Dock = DockStyle.Fill;
             frmPN.Show();
         }

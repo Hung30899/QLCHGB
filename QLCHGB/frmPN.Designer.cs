@@ -45,19 +45,19 @@ namespace QLCHGB
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenNCC = new System.Windows.Forms.TextBox();
             this.txtMaPN = new System.Windows.Forms.TextBox();
-            this.dgvPN = new System.Windows.Forms.DataGridView();
+            this.dgvPNCT = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.txtDonGia = new System.Windows.Forms.TextBox();
-            this.cboMaG = new System.Windows.Forms.ComboBox();
+            this.cboMaGB = new System.Windows.Forms.ComboBox();
             this.txtTien = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtSL = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtTenG = new System.Windows.Forms.TextBox();
+            this.txtTenGB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -65,7 +65,7 @@ namespace QLCHGB
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPNCT)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -85,6 +85,7 @@ namespace QLCHGB
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -100,6 +101,7 @@ namespace QLCHGB
             this.btnSua.TabIndex = 10;
             this.btnSua.Text = " Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -116,6 +118,7 @@ namespace QLCHGB
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "   Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // groupBox2
             // 
@@ -222,6 +225,7 @@ namespace QLCHGB
             this.cboMaNCC.Name = "cboMaNCC";
             this.cboMaNCC.Size = new System.Drawing.Size(195, 27);
             this.cboMaNCC.TabIndex = 3;
+            this.cboMaNCC.TextChanged += new System.EventHandler(this.cboMaNCC_TextChanged);
             // 
             // txtDiaChiNCC
             // 
@@ -273,19 +277,21 @@ namespace QLCHGB
             this.txtMaPN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaPN.Location = new System.Drawing.Point(308, 22);
             this.txtMaPN.Name = "txtMaPN";
+            this.txtMaPN.ReadOnly = true;
             this.txtMaPN.Size = new System.Drawing.Size(195, 26);
             this.txtMaPN.TabIndex = 1;
             // 
-            // dgvPN
+            // dgvPNCT
             // 
-            this.dgvPN.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPN.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvPN.Location = new System.Drawing.Point(0, 289);
-            this.dgvPN.Name = "dgvPN";
-            this.dgvPN.RowHeadersWidth = 51;
-            this.dgvPN.Size = new System.Drawing.Size(1283, 363);
-            this.dgvPN.TabIndex = 13;
+            this.dgvPNCT.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPNCT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPNCT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPNCT.Location = new System.Drawing.Point(0, 289);
+            this.dgvPNCT.Name = "dgvPNCT";
+            this.dgvPNCT.RowHeadersWidth = 51;
+            this.dgvPNCT.Size = new System.Drawing.Size(1283, 363);
+            this.dgvPNCT.TabIndex = 13;
+            this.dgvPNCT.Click += new System.EventHandler(this.dgvPNCT_Click);
             // 
             // panel1
             // 
@@ -303,13 +309,13 @@ namespace QLCHGB
             this.groupBox3.Controls.Add(this.btnHuy);
             this.groupBox3.Controls.Add(this.btnLuu);
             this.groupBox3.Controls.Add(this.txtDonGia);
-            this.groupBox3.Controls.Add(this.cboMaG);
+            this.groupBox3.Controls.Add(this.cboMaGB);
             this.groupBox3.Controls.Add(this.txtTien);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.txtSL);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.txtTenG);
+            this.groupBox3.Controls.Add(this.txtTenGB);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -333,7 +339,7 @@ namespace QLCHGB
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(80, 30);
             this.btnHuy.TabIndex = 29;
-            this.btnHuy.Text = " Hủy";
+            this.btnHuy.Text = "  Đóng";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
@@ -345,12 +351,13 @@ namespace QLCHGB
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuu.Image = global::QLCHGB.Properties.Resources.disk_free_icon_font;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(912, 54);
+            this.btnLuu.Location = new System.Drawing.Point(912, 53);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
             this.btnLuu.TabIndex = 28;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // txtDonGia
             // 
@@ -360,18 +367,21 @@ namespace QLCHGB
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(195, 26);
             this.txtDonGia.TabIndex = 26;
+            this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
-            // cboMaG
+            // cboMaGB
             // 
-            this.cboMaG.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboMaG.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboMaG.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboMaG.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMaG.FormattingEnabled = true;
-            this.cboMaG.Location = new System.Drawing.Point(309, 37);
-            this.cboMaG.Name = "cboMaG";
-            this.cboMaG.Size = new System.Drawing.Size(195, 27);
-            this.cboMaG.TabIndex = 4;
+            this.cboMaGB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboMaGB.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboMaGB.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboMaGB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMaGB.FormattingEnabled = true;
+            this.cboMaGB.Location = new System.Drawing.Point(309, 37);
+            this.cboMaGB.Name = "cboMaGB";
+            this.cboMaGB.Size = new System.Drawing.Size(195, 27);
+            this.cboMaGB.TabIndex = 4;
+            this.cboMaGB.TextChanged += new System.EventHandler(this.cboMaGB_TextChanged);
             // 
             // txtTien
             // 
@@ -415,6 +425,8 @@ namespace QLCHGB
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(195, 26);
             this.txtSL.TabIndex = 5;
+            this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
+            this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSL_KeyPress);
             // 
             // label10
             // 
@@ -428,15 +440,15 @@ namespace QLCHGB
             this.label10.TabIndex = 10;
             this.label10.Text = "Số lượng:";
             // 
-            // txtTenG
+            // txtTenGB
             // 
-            this.txtTenG.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTenG.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenG.Location = new System.Drawing.Point(309, 76);
-            this.txtTenG.Name = "txtTenG";
-            this.txtTenG.ReadOnly = true;
-            this.txtTenG.Size = new System.Drawing.Size(195, 26);
-            this.txtTenG.TabIndex = 9;
+            this.txtTenGB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTenGB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenGB.Location = new System.Drawing.Point(309, 76);
+            this.txtTenGB.Name = "txtTenGB";
+            this.txtTenGB.ReadOnly = true;
+            this.txtTenGB.Size = new System.Drawing.Size(195, 26);
+            this.txtTenGB.TabIndex = 9;
             // 
             // label5
             // 
@@ -509,13 +521,14 @@ namespace QLCHGB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dgvPN);
+            this.Controls.Add(this.dgvPNCT);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPN";
+            this.Load += new System.EventHandler(this.frmPN_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPNCT)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
@@ -539,17 +552,17 @@ namespace QLCHGB
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTenNCC;
         private System.Windows.Forms.TextBox txtMaPN;
-        private System.Windows.Forms.DataGridView dgvPN;
+        private System.Windows.Forms.DataGridView dgvPNCT;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtDonGia;
-        private System.Windows.Forms.ComboBox cboMaG;
+        private System.Windows.Forms.ComboBox cboMaGB;
         private System.Windows.Forms.TextBox txtTien;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtSL;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtTenG;
+        private System.Windows.Forms.TextBox txtTenGB;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
