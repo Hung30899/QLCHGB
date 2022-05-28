@@ -29,23 +29,24 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cboSearch = new System.Windows.Forms.ComboBox();
+            this.btnIn = new System.Windows.Forms.Button();
+            this.btnLammoi = new System.Windows.Forms.Button();
+            this.ckbThoiGian = new System.Windows.Forms.CheckBox();
+            this.cboMaHD = new System.Windows.Forms.ComboBox();
             this.dtpThoiGian = new System.Windows.Forms.DateTimePicker();
-            this.rbnMa = new System.Windows.Forms.RadioButton();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLapHD = new System.Windows.Forms.Button();
-            this.dgvDS = new System.Windows.Forms.DataGridView();
-            this.cboMaPN = new System.Windows.Forms.ComboBox();
+            this.dgvHD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,10 +62,11 @@ namespace QLCHGB
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.cboMaPN);
-            this.groupBox3.Controls.Add(this.cboSearch);
+            this.groupBox3.Controls.Add(this.btnIn);
+            this.groupBox3.Controls.Add(this.btnLammoi);
+            this.groupBox3.Controls.Add(this.ckbThoiGian);
+            this.groupBox3.Controls.Add(this.cboMaHD);
             this.groupBox3.Controls.Add(this.dtpThoiGian);
-            this.groupBox3.Controls.Add(this.rbnMa);
             this.groupBox3.Controls.Add(this.btnTimKiem);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label2);
@@ -80,17 +82,60 @@ namespace QLCHGB
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin";
             // 
-            // cboSearch
+            // btnIn
             // 
-            this.cboSearch.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboSearch.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboSearch.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboSearch.FormattingEnabled = true;
-            this.cboSearch.Location = new System.Drawing.Point(394, 85);
-            this.cboSearch.Name = "cboSearch";
-            this.cboSearch.Size = new System.Drawing.Size(205, 27);
-            this.cboSearch.TabIndex = 24;
+            this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIn.Image = global::QLCHGB.Properties.Resources.print_free_icon_font;
+            this.btnIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnIn.Location = new System.Drawing.Point(887, 60);
+            this.btnIn.Name = "btnIn";
+            this.btnIn.Size = new System.Drawing.Size(80, 30);
+            this.btnIn.TabIndex = 44;
+            this.btnIn.Text = "In";
+            this.btnIn.UseVisualStyleBackColor = true;
+            // 
+            // btnLammoi
+            // 
+            this.btnLammoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLammoi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLammoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLammoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLammoi.Image = global::QLCHGB.Properties.Resources.arrow_circle;
+            this.btnLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLammoi.Location = new System.Drawing.Point(573, 84);
+            this.btnLammoi.Name = "btnLammoi";
+            this.btnLammoi.Size = new System.Drawing.Size(95, 30);
+            this.btnLammoi.TabIndex = 43;
+            this.btnLammoi.Text = "    Làm mới";
+            this.btnLammoi.UseVisualStyleBackColor = true;
+            this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
+            // 
+            // ckbThoiGian
+            // 
+            this.ckbThoiGian.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.ckbThoiGian.AutoSize = true;
+            this.ckbThoiGian.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.ckbThoiGian.Location = new System.Drawing.Point(395, 89);
+            this.ckbThoiGian.Name = "ckbThoiGian";
+            this.ckbThoiGian.Size = new System.Drawing.Size(113, 23);
+            this.ckbThoiGian.TabIndex = 42;
+            this.ckbThoiGian.Text = "Theo thời gian";
+            this.ckbThoiGian.UseVisualStyleBackColor = true;
+            // 
+            // cboMaHD
+            // 
+            this.cboMaHD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cboMaHD.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cboMaHD.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cboMaHD.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboMaHD.FormattingEnabled = true;
+            this.cboMaHD.Location = new System.Drawing.Point(276, 25);
+            this.cboMaHD.Name = "cboMaHD";
+            this.cboMaHD.Size = new System.Drawing.Size(205, 27);
+            this.cboMaHD.TabIndex = 40;
             // 
             // dtpThoiGian
             // 
@@ -101,21 +146,6 @@ namespace QLCHGB
             this.dtpThoiGian.Name = "dtpThoiGian";
             this.dtpThoiGian.Size = new System.Drawing.Size(195, 26);
             this.dtpThoiGian.TabIndex = 37;
-            // 
-            // rbnMa
-            // 
-            this.rbnMa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbnMa.AutoSize = true;
-            this.rbnMa.Checked = true;
-            this.rbnMa.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rbnMa.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnMa.Location = new System.Drawing.Point(611, 88);
-            this.rbnMa.Name = "rbnMa";
-            this.rbnMa.Size = new System.Drawing.Size(136, 23);
-            this.rbnMa.TabIndex = 2;
-            this.rbnMa.TabStop = true;
-            this.rbnMa.Text = "Theo Mã hóa đơn";
-            this.rbnMa.UseVisualStyleBackColor = true;
             // 
             // btnTimKiem
             // 
@@ -170,6 +200,7 @@ namespace QLCHGB
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -197,47 +228,36 @@ namespace QLCHGB
             this.btnLapHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLapHD.Location = new System.Drawing.Point(802, 19);
             this.btnLapHD.Name = "btnLapHD";
-            this.btnLapHD.Size = new System.Drawing.Size(160, 30);
+            this.btnLapHD.Size = new System.Drawing.Size(165, 30);
             this.btnLapHD.TabIndex = 32;
-            this.btnLapHD.Text = "   Tạo hóa";
+            this.btnLapHD.Text = "   Tạo hóa đơn";
             this.btnLapHD.UseVisualStyleBackColor = true;
             this.btnLapHD.Click += new System.EventHandler(this.btnTaoHD_Click);
             // 
-            // dgvDS
+            // dgvHD
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDS.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDS.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDS.BackgroundColor = System.Drawing.Color.White;
-            this.dgvDS.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvDS.ColumnHeadersHeight = 40;
-            this.dgvDS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDS.GridColor = System.Drawing.Color.DodgerBlue;
-            this.dgvDS.Location = new System.Drawing.Point(0, 147);
-            this.dgvDS.Name = "dgvDS";
-            this.dgvDS.RowHeadersWidth = 51;
-            this.dgvDS.Size = new System.Drawing.Size(1283, 505);
-            this.dgvDS.TabIndex = 24;
-            // 
-            // cboMaPN
-            // 
-            this.cboMaPN.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboMaPN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cboMaPN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cboMaPN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboMaPN.FormattingEnabled = true;
-            this.cboMaPN.Location = new System.Drawing.Point(276, 25);
-            this.cboMaPN.Name = "cboMaPN";
-            this.cboMaPN.Size = new System.Drawing.Size(205, 27);
-            this.cboMaPN.TabIndex = 40;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHD.BackgroundColor = System.Drawing.Color.White;
+            this.dgvHD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvHD.ColumnHeadersHeight = 40;
+            this.dgvHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHD.GridColor = System.Drawing.Color.DodgerBlue;
+            this.dgvHD.Location = new System.Drawing.Point(0, 147);
+            this.dgvHD.Name = "dgvHD";
+            this.dgvHD.RowHeadersWidth = 51;
+            this.dgvHD.Size = new System.Drawing.Size(1283, 505);
+            this.dgvHD.TabIndex = 24;
+            this.dgvHD.Click += new System.EventHandler(this.dgvHD_Click);
             // 
             // frmDSHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 652);
-            this.Controls.Add(this.dgvDS);
+            this.Controls.Add(this.dgvHD);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmDSHD";
@@ -245,7 +265,7 @@ namespace QLCHGB
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDS)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,16 +274,17 @@ namespace QLCHGB
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox cboSearch;
         private System.Windows.Forms.DateTimePicker dtpThoiGian;
-        private System.Windows.Forms.RadioButton rbnMa;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnLapHD;
-        private System.Windows.Forms.DataGridView dgvDS;
-        private System.Windows.Forms.ComboBox cboMaPN;
+        private System.Windows.Forms.DataGridView dgvHD;
+        private System.Windows.Forms.ComboBox cboMaHD;
+        private System.Windows.Forms.Button btnLammoi;
+        private System.Windows.Forms.CheckBox ckbThoiGian;
+        private System.Windows.Forms.Button btnIn;
     }
 }

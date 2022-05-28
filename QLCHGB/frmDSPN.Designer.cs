@@ -32,6 +32,7 @@ namespace QLCHGB
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLammoi = new System.Windows.Forms.Button();
             this.ckbThoiGian = new System.Windows.Forms.CheckBox();
             this.cboMaPN = new System.Windows.Forms.ComboBox();
             this.dtpThoiGian = new System.Windows.Forms.DateTimePicker();
@@ -60,6 +61,7 @@ namespace QLCHGB
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.btnLammoi);
             this.groupBox3.Controls.Add(this.ckbThoiGian);
             this.groupBox3.Controls.Add(this.cboMaPN);
             this.groupBox3.Controls.Add(this.dtpThoiGian);
@@ -77,6 +79,22 @@ namespace QLCHGB
             this.groupBox3.TabIndex = 26;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin";
+            // 
+            // btnLammoi
+            // 
+            this.btnLammoi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnLammoi.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnLammoi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLammoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLammoi.Image = global::QLCHGB.Properties.Resources.arrow_circle;
+            this.btnLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLammoi.Location = new System.Drawing.Point(573, 84);
+            this.btnLammoi.Name = "btnLammoi";
+            this.btnLammoi.Size = new System.Drawing.Size(95, 30);
+            this.btnLammoi.TabIndex = 41;
+            this.btnLammoi.Text = "    Làm mới";
+            this.btnLammoi.UseVisualStyleBackColor = true;
+            this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
             // 
             // ckbThoiGian
             // 
@@ -166,6 +184,7 @@ namespace QLCHGB
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -193,7 +212,7 @@ namespace QLCHGB
             this.btnLapPN.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLapPN.Location = new System.Drawing.Point(802, 19);
             this.btnLapPN.Name = "btnLapPN";
-            this.btnLapPN.Size = new System.Drawing.Size(160, 30);
+            this.btnLapPN.Size = new System.Drawing.Size(165, 30);
             this.btnLapPN.TabIndex = 32;
             this.btnLapPN.Text = "   Tạo phiếu nhập";
             this.btnLapPN.UseVisualStyleBackColor = true;
@@ -202,7 +221,7 @@ namespace QLCHGB
             // dgvPN
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dgvPN.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPN.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPN.BackgroundColor = System.Drawing.Color.White;
@@ -249,5 +268,6 @@ namespace QLCHGB
         private System.Windows.Forms.DataGridView dgvPN;
         private System.Windows.Forms.ComboBox cboMaPN;
         private System.Windows.Forms.CheckBox ckbThoiGian;
+        private System.Windows.Forms.Button btnLammoi;
     }
 }

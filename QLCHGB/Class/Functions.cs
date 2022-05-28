@@ -63,7 +63,7 @@ namespace QLCHGB.Class
             catch (Exception ex)
             {
                 MessageBox.Show("Dữ liệu đang được dùng, không thể xoá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                MessageBox.Show(ex.ToString());
+                //MessageBox.Show(ex.ToString());
             }
             cmd.Dispose();
             cmd = null;

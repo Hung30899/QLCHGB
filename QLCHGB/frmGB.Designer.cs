@@ -368,7 +368,7 @@ namespace QLCHGB
             // dgvGB
             // 
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.dgvGB.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGB.BackgroundColor = System.Drawing.Color.White;

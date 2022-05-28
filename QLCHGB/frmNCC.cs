@@ -35,11 +35,21 @@ namespace QLCHGB
         {
             string sql;
             sql = "SELECT * FROM NCC";
-            tblNCC = Functions.GetDataToTable(sql); //Lấy dữ liệu
-            dgvNCC.DataSource = tblNCC; //Hiển thị vào dataGridView
-            dgvNCC.AllowUserToAddRows = false;//Không cho người dùng thêm dữ liệu trực tiếp
-            dgvNCC.EditMode = DataGridViewEditMode.EditProgrammatically;//Không cho sửa dữ liệu trực tiếp
 
+            tblNCC = Functions.GetDataToTable(sql);
+            dgvNCC.DataSource = tblNCC;
+            dgvNCC.Columns[0].HeaderText = "Mã nhà cung cấp";
+            dgvNCC.Columns[2].HeaderText = "Tên nhà cung cấp";
+            dgvNCC.Columns[1].HeaderText = "Địa chỉ";
+            dgvNCC.Columns[3].HeaderText = "Số điện thoại";
+       
+            dgvNCC.Columns[0].Width = 200;
+            dgvNCC.Columns[1].Width = 200;
+            dgvNCC.Columns[2].Width = 200;
+            dgvNCC.Columns[3].Width = 250;
+
+            dgvNCC.AllowUserToAddRows = false;
+            dgvNCC.EditMode = DataGridViewEditMode.EditProgrammatically;
         }
         // Ẩn các txt
         private void Disable()

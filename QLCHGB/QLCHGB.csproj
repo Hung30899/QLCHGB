@@ -278,5 +278,11 @@
   <ItemGroup>
     <None Include="Resources\search-free-icon-font.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
