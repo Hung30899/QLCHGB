@@ -293,7 +293,7 @@ namespace QLCHGB
             this.dgvPNCT.RowHeadersWidth = 51;
             this.dgvPNCT.Size = new System.Drawing.Size(1283, 363);
             this.dgvPNCT.TabIndex = 13;
-            this.dgvPNCT.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPNCT_CellContentClick);
+            this.dgvPNCT.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPNCT_CellDoubleClick);
             this.dgvPNCT.Click += new System.EventHandler(this.dgvPNCT_Click);
             // 
             // panel1

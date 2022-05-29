@@ -41,6 +41,7 @@ namespace QLCHGB
         private void btnThem_Click(object sender, EventArgs e)
         {
             btn = 't';
+            flag = 't';
             Enable();
             txtMaPN.Focus();
             btnDong.Enabled = true;
@@ -131,9 +132,8 @@ namespace QLCHGB
                 sql = "DELETE PhieuNhap WHERE MaPN=N'" + txtMaPN.Text.Trim() + "'";
                 Functions.RunSQLDel(sql);
                 ResetValues();
+                this.Close();
             }
-
-            this.Close();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -226,7 +226,7 @@ namespace QLCHGB
                     {
                         sql = "UPDATE CTPhieuNhap SET SoLuong=N'" + txtSL.Text.Trim() + "' WHERE MaPN=N'" + txtMaPN.Text + "' AND MaGB= N'" + cboMaGB.SelectedValue + "'";
                         Functions.RunSQL(sql);
-                        MessageBox.Show("Đã cập nhật số lượng mã gạch: " + cboMaGB.SelectedValue + "!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Đã cập nhật số lượng mã gấu bông: " + cboMaGB.SelectedValue + "!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         sql = "UPDATE GauBong SET SLN = (SLN + " + txtSL.Text.Trim() + " - " + soluongc + ") Where MaGB = N'" + cboMaGB.SelectedValue + "'";
                         Functions.RunSQL(sql);
                         LoadDateGirdViewCT(txtMaPN.Text.Trim());
@@ -352,6 +352,16 @@ namespace QLCHGB
                 cboMaNCC_TextChanged(sender, e);
                 LoadDateGirdViewCT(strMaPN);
             }
+            else if (flag == 'd')
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                txtMaPN.Text = strMaPN;
+                
+                cboMaNCC.Text = Functions.GetFieldValues("SELECT MaNCC FROM PhieuNhap WHERE MaPN = N'" + strMaPN + "'");
+                cboMaNCC_TextChanged(sender, e);
+                LoadDateGirdViewCT(strMaPN);
+            }
             else
             {
                 string str = "";
@@ -382,21 +392,24 @@ namespace QLCHGB
             //    cboMaGB.Focus();
             //    return;
             //}
-            if (tblPNCT.Rows.Count == 0)
+            if (flag == 's')
             {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            cboMaGB.Text = dgvPNCT.CurrentRow.Cells[0].Value.ToString();
-            txtSL.Text = dgvPNCT.CurrentRow.Cells[2].Value.ToString();
-            txtDonGia.Text = dgvPNCT.CurrentRow.Cells[3].Value.ToString();
+                if (tblPNCT.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                cboMaGB.Text = dgvPNCT.CurrentRow.Cells[0].Value.ToString();
+                txtSL.Text = dgvPNCT.CurrentRow.Cells[2].Value.ToString();
+                txtDonGia.Text = dgvPNCT.CurrentRow.Cells[3].Value.ToString();
 
-            cboMaGB_TextChanged(sender, e);
-            txtSL_TextChanged(sender, e);
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            btnDong.Enabled = true;
-            Disable();
+                cboMaGB_TextChanged(sender, e);
+                txtSL_TextChanged(sender, e);
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+                btnDong.Enabled = true;
+                Disable();
+            }
         }
 
         private void btnDong_Click(object sender, EventArgs e)
@@ -407,9 +420,35 @@ namespace QLCHGB
             }
         }
 
-        private void dgvPNCT_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvPNCT_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            string MaGB, sql;
+            double sl, slcon, slxoa;
+            if(flag == 't' || flag == 's')
+            {
+                if (tblPNCT.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if ((MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                    //Xóa mã gấu bông và cập nhật lại số lượng
+                    MaGB = dgvPNCT.CurrentRow.Cells["MaGB"].Value.ToString(); // lấy mã G
 
+                    sl = Convert.ToDouble(Functions.GetFieldValues("SELECT SLN FROM GauBong WHERE MaGB = N'" + MaGB + "'"));
+                    slxoa = Convert.ToDouble(dgvPNCT.CurrentRow.Cells["SoLuong"].Value.ToString());
+
+                    slcon = sl - slxoa;
+                    sql = "UPDATE GauBong SET SLN =" + slcon + " WHERE MaGB= N'" + MaGB + "'";
+                    Functions.RunSQL(sql);
+
+                    sql = "DELETE CTPhieuNhap WHERE MaPN=N'" + txtMaPN.Text + "' AND MaGB = N'" + MaGB + "'";
+                    Functions.RunSQL(sql);
+
+                    LoadDateGirdViewCT(txtMaPN.Text);
+                }
+            }
         }
 
         private void Enable()

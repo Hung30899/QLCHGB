@@ -30,8 +30,10 @@ namespace QLCHGB
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.btnIn = new System.Windows.Forms.Button();
             this.btnLammoi = new System.Windows.Forms.Button();
             this.ckbThoiGian = new System.Windows.Forms.CheckBox();
@@ -46,6 +48,7 @@ namespace QLCHGB
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +65,7 @@ namespace QLCHGB
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.dgvCTHD);
             this.groupBox3.Controls.Add(this.btnIn);
             this.groupBox3.Controls.Add(this.btnLammoi);
             this.groupBox3.Controls.Add(this.ckbThoiGian);
@@ -82,6 +86,23 @@ namespace QLCHGB
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin";
             // 
+            // dgvCTHD
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvCTHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCTHD.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCTHD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvCTHD.ColumnHeadersHeight = 40;
+            this.dgvCTHD.Enabled = false;
+            this.dgvCTHD.GridColor = System.Drawing.Color.DodgerBlue;
+            this.dgvCTHD.Location = new System.Drawing.Point(12, 60);
+            this.dgvCTHD.Name = "dgvCTHD";
+            this.dgvCTHD.RowHeadersWidth = 51;
+            this.dgvCTHD.Size = new System.Drawing.Size(21, 13);
+            this.dgvCTHD.TabIndex = 45;
+            this.dgvCTHD.Visible = false;
+            // 
             // btnIn
             // 
             this.btnIn.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -96,6 +117,7 @@ namespace QLCHGB
             this.btnIn.TabIndex = 44;
             this.btnIn.Text = "In";
             this.btnIn.UseVisualStyleBackColor = true;
+            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
             // 
             // btnLammoi
             // 
@@ -236,9 +258,9 @@ namespace QLCHGB
             // 
             // dgvHD
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dgvHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvHD.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHD.BackgroundColor = System.Drawing.Color.White;
             this.dgvHD.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -250,6 +272,7 @@ namespace QLCHGB
             this.dgvHD.RowHeadersWidth = 51;
             this.dgvHD.Size = new System.Drawing.Size(1283, 505);
             this.dgvHD.TabIndex = 24;
+            this.dgvHD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHD_CellDoubleClick);
             this.dgvHD.Click += new System.EventHandler(this.dgvHD_Click);
             // 
             // frmDSHD
@@ -265,6 +288,7 @@ namespace QLCHGB
             this.panel1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).EndInit();
             this.ResumeLayout(false);
 
@@ -286,5 +310,6 @@ namespace QLCHGB
         private System.Windows.Forms.Button btnLammoi;
         private System.Windows.Forms.CheckBox ckbThoiGian;
         private System.Windows.Forms.Button btnIn;
+        private System.Windows.Forms.DataGridView dgvCTHD;
     }
 }

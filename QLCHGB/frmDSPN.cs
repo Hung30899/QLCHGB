@@ -151,6 +151,17 @@ namespace QLCHGB
             frmDSPN_Load(sender, e);
         }
 
+        private void dgvPN_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            strMaPN = cboMaPN.Text.Trim();
+            frmPN frmPN = new frmPN();
+            frmPN.MdiParent = this.ParentForm;
+            frmPN.strMaPN = strMaPN;
+            frmPN.flag = 'd'; //CellDoubleClick
+            frmPN.Dock = DockStyle.Fill;
+            frmPN.Show();
+        }
+
         private void LoadDataGridView()
         {
             String sql;

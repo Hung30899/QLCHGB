@@ -1,10 +1,13 @@
-﻿using QLCHGB.Class;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using QLCHGB.Class;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +40,7 @@ namespace QLCHGB
         private void btnThem_Click(object sender, EventArgs e)
         {
             btn = 't';
+            flag = 't';
             Enable();
             btnDong.Enabled = true;
             btnLuu.Enabled = true;
@@ -66,6 +70,13 @@ namespace QLCHGB
                 txtMaHD.Text = strMaHD;
                 LoadDateGirdViewCT(strMaHD);
             }
+            else if(flag == 'd')
+            {
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                txtMaHD.Text = strMaHD;
+                LoadDateGirdViewCT(strMaHD);
+            }    
             else
             {
                 string str = "";
@@ -256,8 +267,8 @@ namespace QLCHGB
                         sql = "UPDATE GauBong SET SLB = (SLB + " + txtSL.Text.Trim() + " - " + soluongc + ") Where MaGB = N'" + cboMaGB.SelectedValue + "'";
                         Functions.RunSQL(sql);
                         LoadDateGirdViewCT(txtMaHD.Text.Trim());
-                        btnXoa.Enabled = false;
-                        btnThem.Enabled = true;
+                 
+                        btnThem.Enabled = false;
                         btnSua.Enabled = false;
                         btnHuy.Enabled = false;
                         btnLuu.Enabled = false;
@@ -308,6 +319,161 @@ namespace QLCHGB
 
         private void btnIn_Click(object sender, EventArgs e)
         {
+            if (dgvCTHD.Rows.Count > 0)
+            {
+                SaveFileDialog sfd = new SaveFileDialog();
+                sfd.Filter = "PDF (*.pdf)|*.pdf";
+                sfd.FileName = txtMaHD.Text.Trim() + ".pdf";
+
+                bool fileError = false;
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    if (File.Exists(sfd.FileName))
+                    {
+                        try
+                        {
+                            File.Delete(sfd.FileName);
+                        }
+                        catch (IOException ex)
+                        {
+                            fileError = true;
+                            MessageBox.Show("Không thể ghi dữ liệu tới ổ đĩa. Mô tả lỗi:" + ex.Message);
+                        }
+                    }
+                    if (!fileError)
+                    {
+
+                        Document doc = new Document(PageSize.A4.Rotate());
+
+                        BaseFont arial = BaseFont.CreateFont(Functions.GetPath("/Resources/ARIAL.TTF"), BaseFont.IDENTITY_H, BaseFont.NOT_EMBEDDED);
+                        iTextSharp.text.Font f_15_bold = new iTextSharp.text.Font(arial, 15, iTextSharp.text.Font.BOLD);
+                        iTextSharp.text.Font f_12_nomal = new iTextSharp.text.Font(arial, 12, iTextSharp.text.Font.NORMAL);
+                        iTextSharp.text.Font f_25_bold = new iTextSharp.text.Font(arial, 25, iTextSharp.text.Font.BOLD);
+                        iTextSharp.text.Font f_12_italic = new iTextSharp.text.Font(arial, 12, iTextSharp.text.Font.ITALIC);
+                        iTextSharp.text.Font f_12_bold = new iTextSharp.text.Font(arial, 12, iTextSharp.text.Font.BOLD);
+
+
+                        FileStream os = new FileStream(sfd.FileName, FileMode.Create);
+
+                        using (os)
+                        {
+                            PdfWriter.GetInstance(doc, os);
+                            doc.Open();
+
+                            PdfPTable tbl1 = new PdfPTable(2);
+                            //Ảnh
+                            iTextSharp.text.Image image = iTextSharp.text.Image.GetInstance(Properties.Resources.bear__1_, System.Drawing.Imaging.ImageFormat.Png);
+                            PdfPCell cell1 = new PdfPCell(image);
+                            cell1.HorizontalAlignment = Element.ALIGN_LEFT;
+                            cell1.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                            //Thông tin
+                            PdfPCell cell2 = new PdfPCell();
+                            Chunk c1 = new Chunk("CỬA HÀNG GẤU BÔNG Teddy Bear", f_15_bold);
+                            Chunk c2 = new Chunk("Địa chỉ: 135 Hùng Vương, Vĩnh Yên, Vĩnh Phúc \nĐiện thoại: 0325698233 \nEmail: teddyBear@gmail.com", f_12_nomal);
+                            cell2.AddElement(c1);
+                            cell2.AddElement(c2);
+                            cell2.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                            cell2.VerticalAlignment = Element.ALIGN_MIDDLE;
+
+                            //Hoa don
+                            string[] partsDay;
+                            partsDay = dtpThoiGian.Text.Split('/');
+                            Paragraph p_hoadon = new Paragraph();
+                            Chunk c_hoadon = new Chunk("HÓA ĐƠN BÁN HÀNG\n", f_25_bold);
+                            Chunk c_mahd = new Chunk("["+txtMaHD.Text.Trim()+"]\n", f_12_nomal);
+                            Chunk c_thoigian = new Chunk("Ngày " + partsDay[1] + " tháng " + partsDay[0] + " năm " + partsDay[2], f_12_italic);
+                            p_hoadon.Add(c_hoadon);
+                            p_hoadon.Add(c_mahd);
+                            p_hoadon.Add(c_thoigian);
+                            p_hoadon.Alignment = Element.ALIGN_CENTER;
+                            p_hoadon.SpacingAfter = 20;
+                            p_hoadon.SpacingBefore = 30;
+                            tbl1.AddCell(cell1);
+                            tbl1.AddCell(cell2);
+                            doc.Add(tbl1);
+                            doc.Add(p_hoadon);
+
+                            //Thông tin khách hàng
+                            //   Paragraph p_kh = new Paragraph("Họ và tên khách hàng: " + txtTenKH.Text + "\nSố điện thoại: " + txtSDT.Text + "\nĐịa chỉ: " + txtDiaChi.Text, f_12_nomal);
+                            //   doc.Add(p_kh);
+
+                            //Bảng CTHD
+                            PdfPTable talCTHD = new PdfPTable(dgvCTHD.Columns.Count);
+                            talCTHD.DefaultCell.Padding = 6;
+                            talCTHD.WidthPercentage = 100;
+                            talCTHD.HorizontalAlignment = Element.ALIGN_LEFT;
+
+
+                            foreach (DataGridViewColumn column in dgvCTHD.Columns)
+                            {
+                                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText, f_12_nomal));
+                                talCTHD.AddCell(cell);
+                            }
+
+                            foreach (DataGridViewRow row in dgvCTHD.Rows)
+                            {
+                                foreach (DataGridViewCell cell in row.Cells)
+                                {
+                                    talCTHD.AddCell(cell.Value.ToString());
+                                }
+                            }
+                            talCTHD.SpacingBefore = 20;
+                            doc.Add(talCTHD);
+
+                            //Tổng tiền
+                            PdfPTable tal_tien = new PdfPTable(2);
+                            PdfPCell cell_tongtien = new PdfPCell(new Phrase("Tổng tiền ", f_12_nomal));
+                            PdfPCell cell_tien = new PdfPCell(new Phrase(txtTongTien.Text, f_12_nomal));
+                            PdfPCell cell_tienchu = new PdfPCell(new Phrase("Số tiền viết bằng chữ: " + lblTien.Text, f_12_nomal));
+                            cell_tongtien.HorizontalAlignment = Element.ALIGN_RIGHT;
+                            cell_tongtien.PaddingRight = 8;
+                            float[] width = new float[] { 400, 100 };
+                            tal_tien.WidthPercentage = 100;
+                            tal_tien.SetWidths(width);
+                            tal_tien.AddCell(cell_tongtien);
+                            tal_tien.AddCell(cell_tien);
+                            PdfPTable tal_tienchu = new PdfPTable(1);
+                            tal_tienchu.WidthPercentage = 100;
+                            tal_tienchu.SetWidths(new float[] { 500 });
+                            tal_tienchu.AddCell(cell_tienchu);
+
+                            doc.Add(tal_tien);
+                            doc.Add(tal_tienchu);
+
+                            //Chữ ký
+                            PdfPTable tal_chuky = new PdfPTable(2);
+                            PdfPCell cell_mua = new PdfPCell();
+                            c1 = new Chunk("  Người mua hàng", f_12_bold);
+                            c2 = new Chunk("(Ký, ghi rõ họ , tên)", f_12_italic);
+                            cell_mua.AddElement(c1);
+                            cell_mua.AddElement(c2);
+                            cell_mua.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                            cell_mua.PaddingLeft = 100;
+                            PdfPCell cell_ban = new PdfPCell();
+                            c1 = new Chunk("  Người bán hàng", f_12_bold);
+                            c2 = new Chunk("(Ký, ghi rõ họ , tên)", f_12_italic);
+                            cell_ban.AddElement(c1);
+                            cell_ban.AddElement(c2);
+                            cell_ban.Border = iTextSharp.text.Rectangle.NO_BORDER;
+                            cell_ban.PaddingLeft = 150;
+                            tal_chuky.AddCell(cell_mua);
+                            tal_chuky.AddCell(cell_ban);
+                            tal_chuky.WidthPercentage = 100;
+                            tal_chuky.SpacingBefore = 20;
+                            doc.Add(tal_chuky);
+
+                            doc.Close();
+
+                            //mở doc
+                            System.Diagnostics.Process.Start(sfd.FileName);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Không có bản ghi nào được Export!!!", "Info");
+            }
 
         }
 
@@ -359,13 +525,14 @@ namespace QLCHGB
 
         private void dgvCTHD_Click(object sender, EventArgs e)
         {
-            if (tblHDCT.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
             if (flag == 's')
             {
+                if (tblHDCT.Rows.Count == 0)
+                {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+                }
+   
                 cboMaGB.Text = dgvCTHD.CurrentRow.Cells[0].Value.ToString();
                 txtSL.Text = dgvCTHD.CurrentRow.Cells[2].Value.ToString();
                 cboMaGB_SelectedIndexChanged(sender, e);
@@ -382,6 +549,34 @@ namespace QLCHGB
             string sql = "Select Top 1 IsNULL(DonGia,0) as DonGia from GiaBan where MaGB =N'" + cboMaGB.SelectedValue + "' and Ngay <= N'" + dtpThoiGian.Text + "' order by Ngay desc";
             txtDonGia.Text = Functions.GetFieldValues(sql);
             txtSL_TextChanged(sender, e);
+        }
+
+        private void dgvCTHD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string MaGB, sql;
+            double slxoa, slcon, sl;
+            if (flag == 't' || flag == 's')
+            {
+                if (tblHDCT.Rows.Count == 0)
+                {
+                    MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                if ((MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes))
+                {
+                    MaGB = dgvCTHD.CurrentRow.Cells["MaGB"].Value.ToString();
+                    sl = Convert.ToDouble(Functions.GetFieldValues("SELECT SLB FROM GauBong WHERE MaGB = N'" + MaGB + "'"));
+                    slxoa = Convert.ToDouble(dgvCTHD.CurrentRow.Cells["SoLuong"].Value.ToString());
+                    slcon = sl - slxoa;
+                    sql = "UPDATE GauBong SET SLB =" + slcon + " WHERE MaGB= N'" + MaGB + "'";
+                    Functions.RunSQL(sql);
+
+                    sql = "DELETE CTHoaDon WHERE MaHD=N'" + txtMaHD.Text + "' AND MaGB = N'" + MaGB + "'";
+                    Functions.RunSQL(sql);
+
+                    LoadDateGirdViewCT(txtMaHD.Text.Trim());
+                }
+            }
         }
 
         private void ResetValues()

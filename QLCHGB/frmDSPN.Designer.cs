@@ -234,6 +234,7 @@ namespace QLCHGB
             this.dgvPN.RowHeadersWidth = 51;
             this.dgvPN.Size = new System.Drawing.Size(1283, 505);
             this.dgvPN.TabIndex = 21;
+            this.dgvPN.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPN_CellDoubleClick);
             this.dgvPN.Click += new System.EventHandler(this.dgvPN_Click);
             // 
             // frmDSPN

@@ -297,6 +297,7 @@ namespace QLCHGB
             this.dgvCTHD.RowHeadersWidth = 51;
             this.dgvCTHD.Size = new System.Drawing.Size(1283, 314);
             this.dgvCTHD.TabIndex = 17;
+            this.dgvCTHD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellDoubleClick);
             this.dgvCTHD.Click += new System.EventHandler(this.dgvCTHD_Click);
             // 
             // groupBox2
