@@ -91,7 +91,7 @@ namespace QLCHGB
             this.btnLammoi.Location = new System.Drawing.Point(573, 84);
             this.btnLammoi.Name = "btnLammoi";
             this.btnLammoi.Size = new System.Drawing.Size(95, 30);
-            this.btnLammoi.TabIndex = 41;
+            this.btnLammoi.TabIndex = 8;
             this.btnLammoi.Text = "    Làm mới";
             this.btnLammoi.UseVisualStyleBackColor = true;
             this.btnLammoi.Click += new System.EventHandler(this.btnLammoi_Click);
@@ -104,7 +104,7 @@ namespace QLCHGB
             this.ckbThoiGian.Location = new System.Drawing.Point(395, 89);
             this.ckbThoiGian.Name = "ckbThoiGian";
             this.ckbThoiGian.Size = new System.Drawing.Size(113, 23);
-            this.ckbThoiGian.TabIndex = 40;
+            this.ckbThoiGian.TabIndex = 7;
             this.ckbThoiGian.Text = "Theo thời gian";
             this.ckbThoiGian.UseVisualStyleBackColor = true;
             this.ckbThoiGian.CheckedChanged += new System.EventHandler(this.ckbThoiGian_CheckedChanged);
@@ -119,7 +119,7 @@ namespace QLCHGB
             this.cboMaPN.Location = new System.Drawing.Point(276, 25);
             this.cboMaPN.Name = "cboMaPN";
             this.cboMaPN.Size = new System.Drawing.Size(205, 27);
-            this.cboMaPN.TabIndex = 39;
+            this.cboMaPN.TabIndex = 1;
             // 
             // dtpThoiGian
             // 
@@ -129,7 +129,7 @@ namespace QLCHGB
             this.dtpThoiGian.Location = new System.Drawing.Point(573, 27);
             this.dtpThoiGian.Name = "dtpThoiGian";
             this.dtpThoiGian.Size = new System.Drawing.Size(195, 26);
-            this.dtpThoiGian.TabIndex = 37;
+            this.dtpThoiGian.TabIndex = 2;
             // 
             // btnTimKiem
             // 
@@ -142,7 +142,7 @@ namespace QLCHGB
             this.btnTimKiem.Location = new System.Drawing.Point(277, 84);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(93, 30);
-            this.btnTimKiem.TabIndex = 0;
+            this.btnTimKiem.TabIndex = 6;
             this.btnTimKiem.Text = "    Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
             this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
@@ -182,7 +182,7 @@ namespace QLCHGB
             this.btnXoa.Location = new System.Drawing.Point(801, 104);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(80, 30);
-            this.btnXoa.TabIndex = 34;
+            this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -198,7 +198,7 @@ namespace QLCHGB
             this.btnSua.Location = new System.Drawing.Point(801, 60);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(80, 30);
-            this.btnSua.TabIndex = 33;
+            this.btnSua.TabIndex = 4;
             this.btnSua.Text = " Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -214,7 +214,7 @@ namespace QLCHGB
             this.btnLapPN.Location = new System.Drawing.Point(802, 19);
             this.btnLapPN.Name = "btnLapPN";
             this.btnLapPN.Size = new System.Drawing.Size(165, 30);
-            this.btnLapPN.TabIndex = 32;
+            this.btnLapPN.TabIndex = 3;
             this.btnLapPN.Text = "   Tạo phiếu nhập";
             this.btnLapPN.UseVisualStyleBackColor = true;
             this.btnLapPN.Click += new System.EventHandler(this.btnLapPN_Click);

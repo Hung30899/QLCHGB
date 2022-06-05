@@ -197,7 +197,7 @@ namespace QLCHGB
             this.btnLuu.Location = new System.Drawing.Point(881, 141);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
-            this.btnLuu.TabIndex = 40;
+            this.btnLuu.TabIndex = 9;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -257,7 +257,7 @@ namespace QLCHGB
             this.dtpNgaySinh.Location = new System.Drawing.Point(635, 42);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(195, 26);
-            this.dtpNgaySinh.TabIndex = 30;
+            this.dtpNgaySinh.TabIndex = 4;
             // 
             // rbnNu
             // 
@@ -266,7 +266,7 @@ namespace QLCHGB
             this.rbnNu.Location = new System.Drawing.Point(716, 82);
             this.rbnNu.Name = "rbnNu";
             this.rbnNu.Size = new System.Drawing.Size(47, 23);
-            this.rbnNu.TabIndex = 29;
+            this.rbnNu.TabIndex = 6;
             this.rbnNu.Text = "Nữ";
             this.rbnNu.UseVisualStyleBackColor = true;
             // 
@@ -278,7 +278,7 @@ namespace QLCHGB
             this.rbnNam.Location = new System.Drawing.Point(635, 82);
             this.rbnNam.Name = "rbnNam";
             this.rbnNam.Size = new System.Drawing.Size(58, 23);
-            this.rbnNam.TabIndex = 28;
+            this.rbnNam.TabIndex = 4;
             this.rbnNam.TabStop = true;
             this.rbnNam.Text = "Nam";
             this.rbnNam.UseVisualStyleBackColor = true;
@@ -290,7 +290,8 @@ namespace QLCHGB
             this.txtSDT.Location = new System.Drawing.Point(635, 158);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(195, 26);
-            this.txtSDT.TabIndex = 24;
+            this.txtSDT.TabIndex = 8;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label7
             // 
@@ -311,7 +312,7 @@ namespace QLCHGB
             this.txtDiaChi.Location = new System.Drawing.Point(635, 118);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(195, 26);
-            this.txtDiaChi.TabIndex = 22;
+            this.txtDiaChi.TabIndex = 7;
             // 
             // label6
             // 
@@ -332,7 +333,7 @@ namespace QLCHGB
             this.txtHoTen.Location = new System.Drawing.Point(287, 115);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(195, 26);
-            this.txtHoTen.TabIndex = 19;
+            this.txtHoTen.TabIndex = 3;
             // 
             // label2
             // 
@@ -353,7 +354,7 @@ namespace QLCHGB
             this.txtUser.Location = new System.Drawing.Point(287, 42);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(195, 26);
-            this.txtUser.TabIndex = 16;
+            this.txtUser.TabIndex = 1;
             // 
             // label12
             // 
@@ -386,7 +387,7 @@ namespace QLCHGB
             this.txtPass.Location = new System.Drawing.Point(287, 77);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(195, 26);
-            this.txtPass.TabIndex = 9;
+            this.txtPass.TabIndex = 2;
             // 
             // label5
             // 

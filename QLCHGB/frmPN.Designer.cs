@@ -208,7 +208,7 @@ namespace QLCHGB
             this.cboMaNCC.Location = new System.Drawing.Point(308, 95);
             this.cboMaNCC.Name = "cboMaNCC";
             this.cboMaNCC.Size = new System.Drawing.Size(195, 27);
-            this.cboMaNCC.TabIndex = 3;
+            this.cboMaNCC.TabIndex = 1;
             this.cboMaNCC.TextChanged += new System.EventHandler(this.cboMaNCC_TextChanged);
             // 
             // btnThem
@@ -374,7 +374,7 @@ namespace QLCHGB
             this.btnLuu.Location = new System.Drawing.Point(912, 15);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
-            this.btnLuu.TabIndex = 28;
+            this.btnLuu.TabIndex = 5;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -386,7 +386,7 @@ namespace QLCHGB
             this.txtDonGia.Location = new System.Drawing.Point(677, 65);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(195, 26);
-            this.txtDonGia.TabIndex = 26;
+            this.txtDonGia.TabIndex = 4;
             this.txtDonGia.TextChanged += new System.EventHandler(this.txtDonGia_TextChanged);
             this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
@@ -400,7 +400,7 @@ namespace QLCHGB
             this.cboMaGB.Location = new System.Drawing.Point(309, 44);
             this.cboMaGB.Name = "cboMaGB";
             this.cboMaGB.Size = new System.Drawing.Size(195, 27);
-            this.cboMaGB.TabIndex = 4;
+            this.cboMaGB.TabIndex = 2;
             this.cboMaGB.TextChanged += new System.EventHandler(this.cboMaGB_TextChanged);
             // 
             // txtTien
@@ -444,7 +444,7 @@ namespace QLCHGB
             this.txtSL.Location = new System.Drawing.Point(677, 28);
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(195, 26);
-            this.txtSL.TabIndex = 5;
+            this.txtSL.TabIndex = 3;
             this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
             this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSL_KeyPress);
             // 

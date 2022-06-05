@@ -43,7 +43,7 @@ namespace QLCHGB
             btn = 't';
             flag = 't';
             Enable();
-            txtMaPN.Focus();
+            cboMaNCC.Focus();
             btnDong.Enabled = true;
             btnLuu.Enabled = true;
             btnThem.Enabled = false;

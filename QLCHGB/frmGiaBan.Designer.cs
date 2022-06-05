@@ -29,7 +29,7 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.rbnTen = new System.Windows.Forms.RadioButton();
             this.txtDonGia = new System.Windows.Forms.TextBox();
@@ -91,7 +91,7 @@ namespace QLCHGB
             this.txtDonGia.Multiline = true;
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(195, 26);
-            this.txtDonGia.TabIndex = 24;
+            this.txtDonGia.TabIndex = 4;
             this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // label7
@@ -160,7 +160,7 @@ namespace QLCHGB
             this.txtTen.Location = new System.Drawing.Point(466, 107);
             this.txtTen.Name = "txtTen";
             this.txtTen.Size = new System.Drawing.Size(195, 26);
-            this.txtTen.TabIndex = 22;
+            this.txtTen.TabIndex = 3;
             // 
             // label5
             // 
@@ -219,7 +219,7 @@ namespace QLCHGB
             this.cboMaGB.Location = new System.Drawing.Point(466, 70);
             this.cboMaGB.Name = "cboMaGB";
             this.cboMaGB.Size = new System.Drawing.Size(195, 27);
-            this.cboMaGB.TabIndex = 37;
+            this.cboMaGB.TabIndex = 2;
             this.cboMaGB.SelectedIndexChanged += new System.EventHandler(this.cboMaGB_SelectedIndexChanged);
             // 
             // btnHuy
@@ -233,7 +233,7 @@ namespace QLCHGB
             this.btnHuy.Location = new System.Drawing.Point(706, 179);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(80, 30);
-            this.btnHuy.TabIndex = 36;
+            this.btnHuy.TabIndex = 9;
             this.btnHuy.Text = " Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -249,7 +249,7 @@ namespace QLCHGB
             this.btnLuu.Location = new System.Drawing.Point(706, 137);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
-            this.btnLuu.TabIndex = 35;
+            this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -265,7 +265,7 @@ namespace QLCHGB
             this.btnXoa.Location = new System.Drawing.Point(706, 96);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(80, 30);
-            this.btnXoa.TabIndex = 34;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -281,7 +281,7 @@ namespace QLCHGB
             this.btnSua.Location = new System.Drawing.Point(706, 57);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(80, 30);
-            this.btnSua.TabIndex = 33;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = " Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -297,7 +297,7 @@ namespace QLCHGB
             this.btnThem.Location = new System.Drawing.Point(706, 19);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(80, 30);
-            this.btnThem.TabIndex = 32;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "   Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -309,7 +309,7 @@ namespace QLCHGB
             this.dtpNgay.Location = new System.Drawing.Point(466, 35);
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(195, 26);
-            this.dtpNgay.TabIndex = 31;
+            this.dtpNgay.TabIndex = 1;
             // 
             // label6
             // 
@@ -336,9 +336,9 @@ namespace QLCHGB
             // 
             // dgvGiaBan
             // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dgvGiaBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvGiaBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGiaBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGiaBan.BackgroundColor = System.Drawing.Color.White;
             this.dgvGiaBan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;

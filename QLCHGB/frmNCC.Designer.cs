@@ -29,7 +29,7 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -121,7 +121,7 @@ namespace QLCHGB
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
             this.btnLuu.TabIndex = 40;
-            this.btnLuu.Text = " Lưu";
+            this.btnLuu.Text = "5";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
@@ -180,7 +180,7 @@ namespace QLCHGB
             this.txtDiaChiNCC.Location = new System.Drawing.Point(350, 153);
             this.txtDiaChiNCC.Name = "txtDiaChiNCC";
             this.txtDiaChiNCC.Size = new System.Drawing.Size(460, 26);
-            this.txtDiaChiNCC.TabIndex = 24;
+            this.txtDiaChiNCC.TabIndex = 4;
             // 
             // label7
             // 
@@ -201,7 +201,8 @@ namespace QLCHGB
             this.txtSDTNCC.Location = new System.Drawing.Point(350, 114);
             this.txtSDTNCC.Name = "txtSDTNCC";
             this.txtSDTNCC.Size = new System.Drawing.Size(195, 26);
-            this.txtSDTNCC.TabIndex = 22;
+            this.txtSDTNCC.TabIndex = 3;
+            this.txtSDTNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDTNCC_KeyPress);
             // 
             // label6
             // 
@@ -222,7 +223,7 @@ namespace QLCHGB
             this.txtMaNCC.Location = new System.Drawing.Point(350, 42);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(195, 26);
-            this.txtMaNCC.TabIndex = 16;
+            this.txtMaNCC.TabIndex = 1;
             // 
             // txtTenNCC
             // 
@@ -231,7 +232,7 @@ namespace QLCHGB
             this.txtTenNCC.Location = new System.Drawing.Point(350, 77);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(195, 26);
-            this.txtTenNCC.TabIndex = 9;
+            this.txtTenNCC.TabIndex = 2;
             // 
             // label5
             // 
@@ -331,9 +332,9 @@ namespace QLCHGB
             // 
             // dgvNCC
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dgvNCC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvNCC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNCC.BackgroundColor = System.Drawing.Color.White;
             this.dgvNCC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;

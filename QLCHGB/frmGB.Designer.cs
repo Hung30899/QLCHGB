@@ -89,7 +89,7 @@ namespace QLCHGB
             // cboLoai
             // 
             this.cboLoai.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboLoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
+            this.cboLoai.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboLoai.FormattingEnabled = true;
             this.cboLoai.Items.AddRange(new object[] {
             "Lớn",
@@ -98,7 +98,7 @@ namespace QLCHGB
             this.cboLoai.Location = new System.Drawing.Point(259, 115);
             this.cboLoai.Name = "cboLoai";
             this.cboLoai.Size = new System.Drawing.Size(195, 27);
-            this.cboLoai.TabIndex = 42;
+            this.cboLoai.TabIndex = 3;
             // 
             // btnHuy
             // 
@@ -111,7 +111,7 @@ namespace QLCHGB
             this.btnHuy.Location = new System.Drawing.Point(939, 185);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(80, 30);
-            this.btnHuy.TabIndex = 41;
+            this.btnHuy.TabIndex = 9;
             this.btnHuy.Text = " Hủy";
             this.btnHuy.UseVisualStyleBackColor = true;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -127,7 +127,7 @@ namespace QLCHGB
             this.btnLuu.Location = new System.Drawing.Point(939, 143);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(80, 30);
-            this.btnLuu.TabIndex = 40;
+            this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = " Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -143,7 +143,7 @@ namespace QLCHGB
             this.btnXoa.Location = new System.Drawing.Point(939, 102);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(80, 30);
-            this.btnXoa.TabIndex = 39;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = " Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -159,7 +159,7 @@ namespace QLCHGB
             this.btnSua.Location = new System.Drawing.Point(939, 63);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(80, 30);
-            this.btnSua.TabIndex = 38;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -175,7 +175,7 @@ namespace QLCHGB
             this.btnThem.Location = new System.Drawing.Point(939, 25);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(80, 30);
-            this.btnThem.TabIndex = 37;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "  Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -190,7 +190,7 @@ namespace QLCHGB
             this.btnChonAnh.Location = new System.Drawing.Point(793, 34);
             this.btnChonAnh.Name = "btnChonAnh";
             this.btnChonAnh.Size = new System.Drawing.Size(111, 30);
-            this.btnChonAnh.TabIndex = 30;
+            this.btnChonAnh.TabIndex = 4;
             this.btnChonAnh.Text = " Chọn ảnh";
             this.btnChonAnh.UseVisualStyleBackColor = true;
             this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);

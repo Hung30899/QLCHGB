@@ -46,7 +46,6 @@ namespace QLCHGB
             this.btnIn = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
@@ -59,11 +58,12 @@ namespace QLCHGB
             this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDonGia
@@ -86,7 +86,7 @@ namespace QLCHGB
             this.cboMaGB.Location = new System.Drawing.Point(309, 61);
             this.cboMaGB.Name = "cboMaGB";
             this.cboMaGB.Size = new System.Drawing.Size(195, 27);
-            this.cboMaGB.TabIndex = 4;
+            this.cboMaGB.TabIndex = 1;
             this.cboMaGB.SelectedIndexChanged += new System.EventHandler(this.cboMaGB_SelectedIndexChanged);
             // 
             // txtTien
@@ -130,7 +130,7 @@ namespace QLCHGB
             this.txtSL.Location = new System.Drawing.Point(677, 45);
             this.txtSL.Name = "txtSL";
             this.txtSL.Size = new System.Drawing.Size(195, 26);
-            this.txtSL.TabIndex = 5;
+            this.txtSL.TabIndex = 2;
             this.txtSL.TextChanged += new System.EventHandler(this.txtSL_TextChanged);
             this.txtSL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSL_KeyPress);
             // 
@@ -286,20 +286,6 @@ namespace QLCHGB
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
-            // dgvCTHD
-            // 
-            this.dgvCTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCTHD.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCTHD.Location = new System.Drawing.Point(0, 287);
-            this.dgvCTHD.Name = "dgvCTHD";
-            this.dgvCTHD.RowHeadersWidth = 51;
-            this.dgvCTHD.Size = new System.Drawing.Size(1283, 314);
-            this.dgvCTHD.TabIndex = 17;
-            this.dgvCTHD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellDoubleClick);
-            this.dgvCTHD.Click += new System.EventHandler(this.dgvCTHD_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnSua);
@@ -410,7 +396,7 @@ namespace QLCHGB
             // 
             this.lblTien.AutoSize = true;
             this.lblTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTien.Location = new System.Drawing.Point(341, 21);
+            this.lblTien.Location = new System.Drawing.Point(341, 18);
             this.lblTien.Name = "lblTien";
             this.lblTien.Size = new System.Drawing.Size(0, 20);
             this.lblTien.TabIndex = 29;
@@ -445,6 +431,20 @@ namespace QLCHGB
             this.panel1.Size = new System.Drawing.Size(1283, 287);
             this.panel1.TabIndex = 16;
             // 
+            // dgvCTHD
+            // 
+            this.dgvCTHD.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCTHD.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCTHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCTHD.Location = new System.Drawing.Point(0, 287);
+            this.dgvCTHD.Name = "dgvCTHD";
+            this.dgvCTHD.RowHeadersWidth = 51;
+            this.dgvCTHD.Size = new System.Drawing.Size(1283, 314);
+            this.dgvCTHD.TabIndex = 17;
+            this.dgvCTHD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCTHD_CellDoubleClick);
+            this.dgvCTHD.Click += new System.EventHandler(this.dgvCTHD_Click);
+            // 
             // frmHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -458,12 +458,12 @@ namespace QLCHGB
             this.Load += new System.EventHandler(this.frmHD_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -482,7 +482,6 @@ namespace QLCHGB
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DataGridView dgvCTHD;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DateTimePicker dtpThoiGian;
         private System.Windows.Forms.Label label3;
@@ -498,5 +497,6 @@ namespace QLCHGB
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnDong;
+        private System.Windows.Forms.DataGridView dgvCTHD;
     }
 }

@@ -241,7 +241,6 @@ namespace QLCHGB
                     LoadDateGirdViewCT(txtMaHD.Text.Trim());
                 }
 
-
                 //Sửa
                 if (btn == 's')
                 {
