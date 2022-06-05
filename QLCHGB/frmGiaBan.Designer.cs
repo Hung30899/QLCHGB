@@ -29,7 +29,7 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cboSearch = new System.Windows.Forms.ComboBox();
             this.rbnTen = new System.Windows.Forms.RadioButton();
             this.txtDonGia = new System.Windows.Forms.TextBox();
@@ -92,6 +92,7 @@ namespace QLCHGB
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(195, 26);
             this.txtDonGia.TabIndex = 24;
+            this.txtDonGia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDonGia_KeyPress);
             // 
             // label7
             // 
@@ -335,9 +336,9 @@ namespace QLCHGB
             // 
             // dgvGiaBan
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dgvGiaBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvGiaBan.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGiaBan.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvGiaBan.BackgroundColor = System.Drawing.Color.White;
             this.dgvGiaBan.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -358,7 +359,7 @@ namespace QLCHGB
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.dgvGiaBan);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGiaBan";
             this.Load += new System.EventHandler(this.frmGiaBan_Load);
             this.groupBox1.ResumeLayout(false);

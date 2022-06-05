@@ -512,9 +512,8 @@ namespace QLCHGB
             this.lblTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTien.Location = new System.Drawing.Point(347, 18);
             this.lblTien.Name = "lblTien";
-            this.lblTien.Size = new System.Drawing.Size(60, 20);
+            this.lblTien.Size = new System.Drawing.Size(0, 20);
             this.lblTien.TabIndex = 29;
-            this.lblTien.Text = "label14";
             // 
             // txtTongTien
             // 
@@ -543,7 +542,7 @@ namespace QLCHGB
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.dgvPNCT);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPN";
             this.Load += new System.EventHandler(this.frmPN_Load);
             this.groupBox2.ResumeLayout(false);

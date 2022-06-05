@@ -124,8 +124,12 @@ namespace QLCHGB
         private void btnTK_Click(object sender, EventArgs e)
         {
             lblHome.Text = "THỐNG KÊ";
+            Functions.CloseForm(this);
+            frmTK frmTK = new frmTK();
+            Functions.MenuClick(frmTK, this);
+            panelDesktop.Visible = false;
             ActivateButton(sender);
-            
+
         }
 
         private void btnGiaBan_Click(object sender, EventArgs e)

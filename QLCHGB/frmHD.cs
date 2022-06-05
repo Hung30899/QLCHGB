@@ -117,12 +117,7 @@ namespace QLCHGB
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string sql;
-            if (tblHDCT.Rows.Count == 0)
-            {
-                MessageBox.Show("Không còn dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            string sql;    
             if (txtMaHD.Text == "")
             {
                 MessageBox.Show("Bạn chưa chọn bản ghi nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

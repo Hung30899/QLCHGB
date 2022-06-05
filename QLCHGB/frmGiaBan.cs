@@ -267,13 +267,7 @@ namespace QLCHGB
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string sql;
-            if (cboSearch.Text.Trim() == "")
-            {
-                MessageBox.Show("Bạn hãy nhập thông tin tìm kiếm", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                cboSearch.Focus();
-                return;
-                LoadDataGridView();
-            }
+            
             if (rbt == 'm') //Tìm kiếm theo mã GH
             {
                 sql = "SELECT a.Ngay, a.MaGB, b.TenGB, a.DonGia" +
@@ -298,6 +292,13 @@ namespace QLCHGB
                 MessageBox.Show("Có " + tblGiaBan.Rows.Count + "  bản ghi thoả mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             dgvGiaBan.DataSource = tblGiaBan;
             ResetValues();
+        }
+
+        private void txtDonGia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (((e.KeyChar >= '0') && (e.KeyChar <= '9')) || (Convert.ToInt32(e.KeyChar) == 8))
+                e.Handled = false;
+            else e.Handled = true;
         }
 
         private void LoadDataGridView()

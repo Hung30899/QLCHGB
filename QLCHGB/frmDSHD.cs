@@ -36,7 +36,7 @@ namespace QLCHGB
             LoadDataGridView();
             btnSua.Enabled = false;
             btnXoa.Enabled = false;
-            Functions.FillCombo("SELECT MaHD FROM PhieuNhap", cboMaHD, "MaHD", "MaHD");
+            Functions.FillCombo("SELECT MaHD FROM HoaDon", cboMaHD, "MaHD", "MaHD");
             cboMaHD.SelectedIndex = -1;
             ResetValues();
         }
@@ -53,7 +53,7 @@ namespace QLCHGB
             sql = @"
                 SELECT a.MaHD,a.ThoiGian,c.Tong
                 FROM HoaDon AS a
-                Left join ViewTongTienHD as c on a.MaHD = c.MaHD";
+                Left join ViewTongTienHD as c on a.MaHD = c.MaHD order by a.ThoiGian desc";
             tblHD = Functions.GetDataToTable(sql);
             dgvHD.DataSource = tblHD;
             dgvHD.Columns[0].HeaderText = "Mã hóa đơn";
@@ -188,6 +188,35 @@ namespace QLCHGB
             frm.flag = 'd';
             frm.Dock = DockStyle.Fill;
             frm.Show();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string sql;
+            if (ckbThoiGian.Checked)
+                sql = @"
+                SELECT a.MaHD,a.ThoiGian,c.Tong
+                FROM HoaDon AS a
+                Left join ViewTongTienHD as c on a.MaHD = c.MaHD
+                Where a.MaHD Like N'%"+ cboMaHD.Text.Trim() + "%' and a.ThoiGian = '"+ dtpThoiGian.Text.Trim() + "' order by a.ThoiGian desc";
+            else
+                sql = @"
+                SELECT a.MaHD,a.ThoiGian,c.Tong
+                FROM HoaDon AS a
+                Left join ViewTongTienHD as c on a.MaHD = c.MaHD
+                Where a.MaHD Like N'%" + cboMaHD.Text.Trim() + "%' order by a.ThoiGian desc";
+            tblHD = Functions.GetDataToTable(sql);
+
+            if (tblHD.Rows.Count == 0)
+                MessageBox.Show("Không có bản ghi thoả mãn điều kiện tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+                MessageBox.Show("Có " + tblHD.Rows.Count + "  bản ghi thoả mãn điều kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            dgvHD.DataSource = tblHD;
+        }
+
+        private void ckbThoiGian_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void TongTien()

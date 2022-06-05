@@ -28,7 +28,7 @@ namespace QLCHGB
             btnHuy.Enabled = false;
             LoadDataGridView();
             Disable();
-            rbnTen_CheckedChanged(sender, e);
+            rbnUser_CheckedChanged(sender, e);
 
         }
         private void LoadDataGridView()

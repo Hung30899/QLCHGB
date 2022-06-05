@@ -466,7 +466,7 @@ namespace QLCHGB
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.dgvUser);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmND";
             this.Load += new System.EventHandler(this.frmND_Load);
             this.groupBox1.ResumeLayout(false);

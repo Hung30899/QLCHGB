@@ -78,9 +78,9 @@ namespace QLCHGB
         {
             string sql;
             if (ckbThoiGian.Checked)
-                sql = "Select * From ViewDSPN Where MaPN Like N'%" + cboMaPN.Text.Trim() + "%' and ThoiGian ='" + dtpThoiGian.Text.Trim() + "'";
+                sql = "Select * From ViewDSPN Where MaPN Like N'%" + cboMaPN.Text.Trim() + "%' and ThoiGian ='" + dtpThoiGian.Text.Trim() + "' order by ThoiGian desc";
             else
-                sql = "Select * From ViewDSPN Where MaPN Like N'%" + cboMaPN.Text.Trim() + "%'";
+                sql = "Select * From ViewDSPN Where MaPN Like N'%" + cboMaPN.Text.Trim() + "%' order by ThoiGian desc";
             tblPN = Functions.GetDataToTable(sql);
 
             if (tblPN.Rows.Count == 0)
@@ -162,6 +162,11 @@ namespace QLCHGB
             frmPN.Show();
         }
 
+        private void ckbThoiGian_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void LoadDataGridView()
         {
             String sql;
@@ -169,7 +174,8 @@ namespace QLCHGB
                 SELECT a.MaPN,a.ThoiGian,a.MaNCC,b.TenNCC,c.Tong
                 FROM PhieuNhap AS a
                 Left join NCC AS b on a.MaNCC = b.MaNCC
-                Left join ViewTongTien as c on a.MaPN = c.MaPN ";
+                Left join ViewTongTien as c on a.MaPN = c.MaPN
+                order by a.ThoiGian desc";
             tblPN = Functions.GetDataToTable(sql);
             dgvPN.DataSource = tblPN;
             dgvPN.Columns[0].HeaderText = "Mã phiếu nhập";

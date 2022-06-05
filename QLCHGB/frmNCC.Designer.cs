@@ -304,11 +304,10 @@ namespace QLCHGB
             this.rbnTen.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rbnTen.AutoSize = true;
             this.rbnTen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rbnTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbnTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbnTen.Location = new System.Drawing.Point(734, 32);
             this.rbnTen.Name = "rbnTen";
-            this.rbnTen.Size = new System.Drawing.Size(84, 23);
+            this.rbnTen.Size = new System.Drawing.Size(85, 23);
             this.rbnTen.TabIndex = 3;
             this.rbnTen.Text = "Theo Tên";
             this.rbnTen.UseVisualStyleBackColor = true;
@@ -355,7 +354,7 @@ namespace QLCHGB
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.dgvNCC);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmNCC";
             this.Load += new System.EventHandler(this.frmNCC_Load);
             this.panel1.ResumeLayout(false);

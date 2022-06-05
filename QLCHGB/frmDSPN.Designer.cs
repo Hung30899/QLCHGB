@@ -107,6 +107,7 @@ namespace QLCHGB
             this.ckbThoiGian.TabIndex = 40;
             this.ckbThoiGian.Text = "Theo thời gian";
             this.ckbThoiGian.UseVisualStyleBackColor = true;
+            this.ckbThoiGian.CheckedChanged += new System.EventHandler(this.ckbThoiGian_CheckedChanged);
             // 
             // cboMaPN
             // 
@@ -244,7 +245,7 @@ namespace QLCHGB
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.dgvPN);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDSPN";
             this.Load += new System.EventHandler(this.frmDSPN_Load);
             this.panel1.ResumeLayout(false);

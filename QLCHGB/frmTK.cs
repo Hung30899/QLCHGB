@@ -16,5 +16,10 @@ namespace QLCHGB
         {
             InitializeComponent();
         }
+
+        private void frmTK_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

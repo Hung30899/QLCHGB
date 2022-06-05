@@ -29,10 +29,18 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmTK
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1283, 652);
+            this.Name = "frmTK";
             this.Text = "frmTK";
+            this.Load += new System.EventHandler(this.frmTK_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

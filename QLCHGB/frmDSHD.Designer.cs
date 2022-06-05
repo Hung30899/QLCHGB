@@ -146,6 +146,7 @@ namespace QLCHGB
             this.ckbThoiGian.TabIndex = 42;
             this.ckbThoiGian.Text = "Theo thời gian";
             this.ckbThoiGian.UseVisualStyleBackColor = true;
+            this.ckbThoiGian.CheckedChanged += new System.EventHandler(this.ckbThoiGian_CheckedChanged);
             // 
             // cboMaHD
             // 
@@ -183,6 +184,7 @@ namespace QLCHGB
             this.btnTimKiem.TabIndex = 0;
             this.btnTimKiem.Text = "    Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // label3
             // 
@@ -282,7 +284,7 @@ namespace QLCHGB
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.dgvHD);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDSHD";
             this.Load += new System.EventHandler(this.frmDSHD_Load);
             this.panel1.ResumeLayout(false);
