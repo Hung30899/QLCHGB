@@ -214,7 +214,7 @@ namespace QLCHGB
             // cboMaGB
             // 
             this.cboMaGB.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.cboMaGB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic);
+            this.cboMaGB.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboMaGB.FormattingEnabled = true;
             this.cboMaGB.Location = new System.Drawing.Point(466, 70);
             this.cboMaGB.Name = "cboMaGB";

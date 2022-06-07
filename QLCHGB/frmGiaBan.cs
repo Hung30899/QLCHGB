@@ -1,12 +1,6 @@
 ﻿using QLCHGB.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCHGB
@@ -272,12 +266,6 @@ namespace QLCHGB
             {
                 sql = "SELECT a.Ngay, a.MaGB, b.TenGB, a.DonGia" +
                     " FROM GiaBan as a, GauBong as b Where a.MaGB = b.MaGB and a.MaGB Like N'%"+cboSearch.Text.Trim()+"%' Order by a.Ngay desc";
-
-              //string a =  "SELECT a.Ngay, a.MaGB, b.TenGB, a.DonGia " +
-              //      "FROM GiaBan as a" +
-              //      "left join GauBong as b on a.MaGB = b.MaGB" +
-              //      "where a.MaGB Like N'%sdfsd%'";
-
                 tblGiaBan = Functions.GetDataToTable(sql);
             }
             if (rbt == 't') //Tìm kiếm theo Tên GH

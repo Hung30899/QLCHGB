@@ -1,13 +1,7 @@
 ﻿using QLCHGB.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCHGB
@@ -15,8 +9,6 @@ namespace QLCHGB
     public partial class frmDSPN : Form
     {
         DataTable tblPN;
-        char btn;
-        String rbn, soluongc;
 
         public String strMaPN;
         public Char flag;
@@ -71,7 +63,6 @@ namespace QLCHGB
 
             btnSua.Enabled = true;
             btnXoa.Enabled = true;
-            //Disable();
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)

@@ -5,7 +5,6 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.IO;
-using System.Reflection.Metadata;
 using System.Windows.Forms;
 using Document = iTextSharp.text.Document;
 
@@ -273,7 +272,6 @@ namespace QLCHGB
                         iTextSharp.text.Font f_12_italic = new iTextSharp.text.Font(arial, 12, iTextSharp.text.Font.ITALIC);
                         iTextSharp.text.Font f_12_bold = new iTextSharp.text.Font(arial, 12, iTextSharp.text.Font.BOLD);
 
-
                         FileStream os = new FileStream(sfd.FileName, FileMode.Create);
 
                         using (os)
@@ -314,16 +312,11 @@ namespace QLCHGB
                             doc.Add(tbl1);
                             doc.Add(p_hoadon);
 
-                            //Thông tin khách hàng
-                            //   Paragraph p_kh = new Paragraph("Họ và tên khách hàng: " + txtTenKH.Text + "\nSố điện thoại: " + txtSDT.Text + "\nĐịa chỉ: " + txtDiaChi.Text, f_12_nomal);
-                            //   doc.Add(p_kh);
-
                             //Bảng CTHD
                             PdfPTable talCTHD = new PdfPTable(dgvCTHD.Columns.Count);
                             talCTHD.DefaultCell.Padding = 6;
                             talCTHD.WidthPercentage = 100;
                             talCTHD.HorizontalAlignment = Element.ALIGN_LEFT;
-
 
                             foreach (DataGridViewColumn column in dgvCTHD.Columns)
                             {

@@ -1,12 +1,6 @@
 ﻿using QLCHGB.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCHGB
@@ -19,31 +13,7 @@ namespace QLCHGB
         {
             InitializeComponent();
         }
-
-        //public string GetUser()
-        //{
-        //    string user = "";
-        //    try
-        //    {
-        //        DataTable tblLogin;
-        //        string sql;
-        //        sql = "SELECT * FROM NguoiDung WHERE Username = N'" + txtUser.Text.Trim() + "'AND Password = N'" + txtPass.Text.Trim() + "'";
-        //        tblLogin = Functions.GetDataToTable(sql);
-        //        if (tblLogin != null)
-        //        {
-        //            foreach (DataRow dr in tblLogin.Rows)
-        //            {
-        //                user = dr["userName"].ToString();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-        //        MessageBox.Show("Lỗi");
-        //    }
-        //    return user;
-        //}
-
+   
         private void btnDangnhap_Click(object sender, EventArgs e)
         {
             DataTable tblLogin;

@@ -2,15 +2,9 @@
 using iTextSharp.text.pdf;
 using QLCHGB.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCHGB
@@ -386,10 +380,6 @@ namespace QLCHGB
                             tbl1.AddCell(cell2);
                             doc.Add(tbl1);
                             doc.Add(p_hoadon);
-
-                            //Thông tin khách hàng
-                            //   Paragraph p_kh = new Paragraph("Họ và tên khách hàng: " + txtTenKH.Text + "\nSố điện thoại: " + txtSDT.Text + "\nĐịa chỉ: " + txtDiaChi.Text, f_12_nomal);
-                            //   doc.Add(p_kh);
 
                             //Bảng CTHD
                             PdfPTable talCTHD = new PdfPTable(dgvCTHD.Columns.Count);

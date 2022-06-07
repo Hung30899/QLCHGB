@@ -1,13 +1,7 @@
 ﻿using QLCHGB.Class;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLCHGB
@@ -17,7 +11,7 @@ namespace QLCHGB
       //  DataTable tblPN;
         DataTable tblPNCT;
         char btn;
-        String rbn, soluongc;
+        String soluongc;
 
         public String strMaPN;
         public Char flag;
@@ -386,12 +380,6 @@ namespace QLCHGB
 
         private void dgvPNCT_Click(object sender, EventArgs e)
         {
-            //if (btnThem.Enabled == false)
-            //{
-            //    MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    cboMaGB.Focus();
-            //    return;
-            //}
             if (flag == 's')
             {
                 if (tblPNCT.Rows.Count == 0)
