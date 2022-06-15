@@ -1,7 +1,6 @@
-﻿
-namespace QLCHGB
+﻿namespace QLCHGB
 {
-    partial class frmNCC
+    partial class frmKH
     {
         /// <summary>
         /// Required designer variable.
@@ -29,69 +28,65 @@ namespace QLCHGB
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.dgvKH = new System.Windows.Forms.DataGridView();
+            this.rbnTen = new System.Windows.Forms.RadioButton();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.txtDiaChiNCC = new System.Windows.Forms.TextBox();
+            this.txtDiaChiKH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSDTNCC = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtMaNCC = new System.Windows.Forms.TextBox();
-            this.txtTenNCC = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtSDTKH = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.cboSearch = new System.Windows.Forms.ComboBox();
-            this.rbnTen = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rbnUser = new System.Windows.Forms.RadioButton();
-            this.dgvNCC = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // dgvKH
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.groupBox3);
-            this.panel1.Controls.Add(this.groupBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1283, 299);
-            this.panel1.TabIndex = 13;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dgvKH.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvKH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvKH.BackgroundColor = System.Drawing.Color.White;
+            this.dgvKH.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvKH.ColumnHeadersHeight = 40;
+            this.dgvKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvKH.GridColor = System.Drawing.Color.DodgerBlue;
+            this.dgvKH.Location = new System.Drawing.Point(0, 299);
+            this.dgvKH.Name = "dgvKH";
+            this.dgvKH.RowHeadersWidth = 51;
+            this.dgvKH.Size = new System.Drawing.Size(1283, 353);
+            this.dgvKH.TabIndex = 16;
+            this.dgvKH.Click += new System.EventHandler(this.dgvKH_Click);
             // 
-            // groupBox3
+            // rbnTen
             // 
-            this.groupBox3.BackColor = System.Drawing.Color.White;
-            this.groupBox3.Controls.Add(this.btnHuy);
-            this.groupBox3.Controls.Add(this.btnLuu);
-            this.groupBox3.Controls.Add(this.btnXoa);
-            this.groupBox3.Controls.Add(this.btnSua);
-            this.groupBox3.Controls.Add(this.btnThem);
-            this.groupBox3.Controls.Add(this.txtDiaChiNCC);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.txtSDTNCC);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.txtMaNCC);
-            this.groupBox3.Controls.Add(this.txtTenNCC);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1283, 229);
-            this.groupBox3.TabIndex = 26;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Thông tin chi tiết";
+            this.rbnTen.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.rbnTen.AutoSize = true;
+            this.rbnTen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rbnTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbnTen.Location = new System.Drawing.Point(734, 32);
+            this.rbnTen.Name = "rbnTen";
+            this.rbnTen.Size = new System.Drawing.Size(85, 23);
+            this.rbnTen.TabIndex = 3;
+            this.rbnTen.Text = "Theo Tên";
+            this.rbnTen.UseVisualStyleBackColor = true;
+            this.rbnTen.CheckedChanged += new System.EventHandler(this.rbnTen_CheckedChanged);
             // 
             // btnHuy
             // 
@@ -173,14 +168,14 @@ namespace QLCHGB
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // txtDiaChiNCC
+            // txtDiaChiKH
             // 
-            this.txtDiaChiNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtDiaChiNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChiNCC.Location = new System.Drawing.Point(350, 153);
-            this.txtDiaChiNCC.Name = "txtDiaChiNCC";
-            this.txtDiaChiNCC.Size = new System.Drawing.Size(460, 26);
-            this.txtDiaChiNCC.TabIndex = 4;
+            this.txtDiaChiKH.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDiaChiKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiaChiKH.Location = new System.Drawing.Point(350, 153);
+            this.txtDiaChiKH.Name = "txtDiaChiKH";
+            this.txtDiaChiKH.Size = new System.Drawing.Size(460, 26);
+            this.txtDiaChiKH.TabIndex = 4;
             // 
             // label7
             // 
@@ -194,83 +189,15 @@ namespace QLCHGB
             this.label7.TabIndex = 23;
             this.label7.Text = "SDT:";
             // 
-            // txtSDTNCC
+            // txtSDTKH
             // 
-            this.txtSDTNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtSDTNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDTNCC.Location = new System.Drawing.Point(350, 114);
-            this.txtSDTNCC.Name = "txtSDTNCC";
-            this.txtSDTNCC.Size = new System.Drawing.Size(195, 26);
-            this.txtSDTNCC.TabIndex = 3;
-            this.txtSDTNCC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDTNCC_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(210, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 19);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Địa chỉ:";
-            // 
-            // txtMaNCC
-            // 
-            this.txtMaNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtMaNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNCC.Location = new System.Drawing.Point(350, 42);
-            this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(195, 26);
-            this.txtMaNCC.TabIndex = 1;
-            // 
-            // txtTenNCC
-            // 
-            this.txtTenNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtTenNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNCC.Location = new System.Drawing.Point(350, 77);
-            this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(195, 26);
-            this.txtTenNCC.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label5.Location = new System.Drawing.Point(210, 82);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(118, 19);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Tên nhà cung cấp:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(210, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 19);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Mã nhà cung cấp:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.btnTimKiem);
-            this.groupBox1.Controls.Add(this.cboSearch);
-            this.groupBox1.Controls.Add(this.rbnTen);
-            this.groupBox1.Controls.Add(this.rbnUser);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 220);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1283, 79);
-            this.groupBox1.TabIndex = 14;
-            this.groupBox1.TabStop = false;
+            this.txtSDTKH.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSDTKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSDTKH.Location = new System.Drawing.Point(350, 114);
+            this.txtSDTKH.Name = "txtSDTKH";
+            this.txtSDTKH.Size = new System.Drawing.Size(195, 26);
+            this.txtSDTKH.TabIndex = 3;
+            this.txtSDTKH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDTKH_KeyPress);
             // 
             // btnTimKiem
             // 
@@ -300,19 +227,19 @@ namespace QLCHGB
             this.cboSearch.Size = new System.Drawing.Size(205, 27);
             this.cboSearch.TabIndex = 24;
             // 
-            // rbnTen
+            // groupBox1
             // 
-            this.rbnTen.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.rbnTen.AutoSize = true;
-            this.rbnTen.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.rbnTen.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbnTen.Location = new System.Drawing.Point(734, 32);
-            this.rbnTen.Name = "rbnTen";
-            this.rbnTen.Size = new System.Drawing.Size(85, 23);
-            this.rbnTen.TabIndex = 3;
-            this.rbnTen.Text = "Theo Tên";
-            this.rbnTen.UseVisualStyleBackColor = true;
-            this.rbnTen.CheckedChanged += new System.EventHandler(this.rbnTen_CheckedChanged);
+            this.groupBox1.Controls.Add(this.btnTimKiem);
+            this.groupBox1.Controls.Add(this.cboSearch);
+            this.groupBox1.Controls.Add(this.rbnTen);
+            this.groupBox1.Controls.Add(this.rbnUser);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 220);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(1283, 79);
+            this.groupBox1.TabIndex = 14;
+            this.groupBox1.TabStop = false;
             // 
             // rbnUser
             // 
@@ -330,66 +257,138 @@ namespace QLCHGB
             this.rbnUser.UseVisualStyleBackColor = true;
             this.rbnUser.CheckedChanged += new System.EventHandler(this.rbnUser_CheckedChanged);
             // 
-            // dgvNCC
+            // label6
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(242)))), ((int)(((byte)(232)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.dgvNCC.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvNCC.BackgroundColor = System.Drawing.Color.White;
-            this.dgvNCC.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.dgvNCC.ColumnHeadersHeight = 40;
-            this.dgvNCC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvNCC.GridColor = System.Drawing.Color.DodgerBlue;
-            this.dgvNCC.Location = new System.Drawing.Point(0, 299);
-            this.dgvNCC.Name = "dgvNCC";
-            this.dgvNCC.RowHeadersWidth = 51;
-            this.dgvNCC.Size = new System.Drawing.Size(1283, 353);
-            this.dgvNCC.TabIndex = 14;
-            this.dgvNCC.Click += new System.EventHandler(this.dgvNCC_Click);
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(210, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(54, 19);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Địa chỉ:";
             // 
-            // frmNCC
+            // txtMaKH
+            // 
+            this.txtMaKH.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKH.Location = new System.Drawing.Point(350, 42);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.Size = new System.Drawing.Size(195, 26);
+            this.txtMaKH.TabIndex = 1;
+            // 
+            // txtTenKH
+            // 
+            this.txtTenKH.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtTenKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKH.Location = new System.Drawing.Point(350, 77);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(195, 26);
+            this.txtTenKH.TabIndex = 2;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(210, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(105, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Mã khách hàng:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.btnHuy);
+            this.groupBox3.Controls.Add(this.btnLuu);
+            this.groupBox3.Controls.Add(this.btnXoa);
+            this.groupBox3.Controls.Add(this.btnSua);
+            this.groupBox3.Controls.Add(this.btnThem);
+            this.groupBox3.Controls.Add(this.txtDiaChiKH);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.txtSDTKH);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.txtMaKH);
+            this.groupBox3.Controls.Add(this.txtTenKH);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1283, 229);
+            this.groupBox3.TabIndex = 26;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Thông tin chi tiết";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label5.Location = new System.Drawing.Point(210, 82);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 19);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tên khách hàng:";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.groupBox3);
+            this.panel1.Controls.Add(this.groupBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1283, 299);
+            this.panel1.TabIndex = 15;
+            // 
+            // frmKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 652);
-            this.Controls.Add(this.dgvNCC);
+            this.Controls.Add(this.dgvKH);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "frmNCC";
-            this.Load += new System.EventHandler(this.frmNCC_Load);
-            this.panel1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.Name = "frmKH";
+            this.Text = "frmKH";
+            this.Load += new System.EventHandler(this.frmKH_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKH)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtDiaChiNCC;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSDTNCC;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtMaNCC;
-        private System.Windows.Forms.TextBox txtTenNCC;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.DataGridView dgvKH;
         private System.Windows.Forms.RadioButton rbnTen;
-        private System.Windows.Forms.RadioButton rbnUser;
         private System.Windows.Forms.Button btnHuy;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.TextBox txtDiaChiKH;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSDTKH;
         private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.DataGridView dgvNCC;
+        private System.Windows.Forms.ComboBox cboSearch;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbnUser;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMaKH;
+        private System.Windows.Forms.TextBox txtTenKH;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
     }
 }

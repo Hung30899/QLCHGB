@@ -160,7 +160,7 @@ namespace QLCHGB
             // 
             this.txtSDTNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSDTNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDTNCC.Location = new System.Drawing.Point(677, 96);
+            this.txtSDTNCC.Location = new System.Drawing.Point(677, 56);
             this.txtSDTNCC.Name = "txtSDTNCC";
             this.txtSDTNCC.ReadOnly = true;
             this.txtSDTNCC.Size = new System.Drawing.Size(195, 26);
@@ -232,7 +232,7 @@ namespace QLCHGB
             // 
             this.txtDiaChiNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtDiaChiNCC.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiaChiNCC.Location = new System.Drawing.Point(677, 58);
+            this.txtDiaChiNCC.Location = new System.Drawing.Point(677, 96);
             this.txtDiaChiNCC.Name = "txtDiaChiNCC";
             this.txtDiaChiNCC.ReadOnly = true;
             this.txtDiaChiNCC.Size = new System.Drawing.Size(195, 26);

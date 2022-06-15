@@ -16,6 +16,7 @@ namespace QLCHGB
 
         public String strMaHD, txtTien,lblTien;
         public Char flag;
+        public String user="";
 
         public frmDSHD()
         {
@@ -25,6 +26,7 @@ namespace QLCHGB
         private void btnTaoHD_Click(object sender, EventArgs e)
         {
             frmHD frmHD = new frmHD();
+            frmHD.user = user;
             frmHD.MdiParent = this.ParentForm;
             frmHD.Dock = DockStyle.Fill;
             frmHD.Show();
@@ -50,18 +52,23 @@ namespace QLCHGB
         {
             String sql;
             sql = @"
-                SELECT a.MaHD,a.ThoiGian,c.Tong
+                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong
                 FROM HoaDon AS a
+                Left join KhachHang as b on a.MaKH = b.MaKH
                 Left join ViewTongTienHD as c on a.MaHD = c.MaHD order by a.ThoiGian desc";
             tblHD = Functions.GetDataToTable(sql);
             dgvHD.DataSource = tblHD;
             dgvHD.Columns[0].HeaderText = "Mã hóa đơn";
             dgvHD.Columns[1].HeaderText = "Thời gian";
-            dgvHD.Columns[2].HeaderText = "Tổng tiền";
+            dgvHD.Columns[2].HeaderText = "Tên khách hàng";
+            dgvHD.Columns[3].HeaderText = "Người lập hóa đơn";
+            dgvHD.Columns[4].HeaderText = "Tổng tiền";
 
             dgvHD.Columns[0].Width = 200;
             dgvHD.Columns[1].Width = 200;
-            dgvHD.Columns[2].Width = 250;
+            dgvHD.Columns[2].Width = 200;
+            dgvHD.Columns[3].Width = 200;
+            dgvHD.Columns[4].Width = 250;
 
             dgvHD.AllowUserToAddRows = false;
             dgvHD.EditMode = DataGridViewEditMode.EditProgrammatically;
@@ -149,6 +156,7 @@ namespace QLCHGB
             frm.MdiParent = this.ParentForm;
             frm.strMaHD = strMaHD;
             frm.flag = 's';
+            frm.user = user;
             frm.Dock = DockStyle.Fill;
             frm.Show();
         }
@@ -156,7 +164,9 @@ namespace QLCHGB
         {
 
             String sql;
-            //     sql = "SELECT * FROM CTPhieuNhap WHERE MaPN = N'" + txtMaPN.Text.Trim() + "'";
+            //sql = "SELECT * FROM CTPhieuNhap WHERE MaPN = N'" + txtMaPN.Text.Trim() + "'";
+
+
             sql = "SELECT a.MaGB,b.TenGB,a.SoLuong,a.DonGia,a.SoLuong * a.DonGia AS ThanhTien FROM CTHoaDon AS a,GauBong AS b WHERE a.MaHD = N'" + str + "' AND a.MaGB=b.MaGB";
             DataTable tblHDCT;
             tblHDCT = Functions.GetDataToTable(sql);
@@ -194,14 +204,17 @@ namespace QLCHGB
             string sql;
             if (ckbThoiGian.Checked)
                 sql = @"
-                SELECT a.MaHD,a.ThoiGian,c.Tong
+                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong
                 FROM HoaDon AS a
+                Left join KhachHang as b on a.MaKH = b.MaKH
                 Left join ViewTongTienHD as c on a.MaHD = c.MaHD
-                Where a.MaHD Like N'%"+ cboMaHD.Text.Trim() + "%' and a.ThoiGian = '"+ dtpThoiGian.Text.Trim() + "' order by a.ThoiGian desc";
+                Where a.MaHD Like N'%" + cboMaHD.Text.Trim() + "%' and a.ThoiGian = '"+ dtpThoiGian.Text.Trim() + "' order by a.ThoiGian desc";
+
             else
                 sql = @"
-                SELECT a.MaHD,a.ThoiGian,c.Tong
+                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong
                 FROM HoaDon AS a
+                Left join KhachHang as b on a.MaKH = b.MaKH
                 Left join ViewTongTienHD as c on a.MaHD = c.MaHD
                 Where a.MaHD Like N'%" + cboMaHD.Text.Trim() + "%' order by a.ThoiGian desc";
             tblHD = Functions.GetDataToTable(sql);
@@ -312,6 +325,20 @@ namespace QLCHGB
                             doc.Add(tbl1);
                             doc.Add(p_hoadon);
 
+                            //Thông tin khách hàng
+                            string sql, strMaKH="", strTenKH = "", strDiaChi="", strSDT="";
+                            sql  = "Select MaKH from HoaDon where MaHD =N'" + cboMaHD.Text.Trim()  + "'";
+                            strMaKH = Functions.GetFieldValues(sql);
+                            sql = "Select TenKH from KhachHang where MaKH =N'" + strMaKH + "'";
+                            strTenKH = Functions.GetFieldValues(sql);
+                            sql = "Select DiaChi from KhachHang where MaKH =N'" + strMaKH + "'";
+                            strDiaChi = Functions.GetFieldValues(sql);
+                            sql = "Select SDT from KhachHang where MaKH =N'" + strMaKH + "'";
+                            strSDT = Functions.GetFieldValues(sql);
+                            
+                            Paragraph p_kh = new Paragraph("Họ và tên khách hàng: " + strTenKH + "\nSố điện thoại: " + strSDT + "\nĐịa chỉ: " + strDiaChi, f_12_nomal);
+                            doc.Add(p_kh);
+
                             //Bảng CTHD
                             PdfPTable talCTHD = new PdfPTable(dgvCTHD.Columns.Count);
                             talCTHD.DefaultCell.Padding = 6;
@@ -337,7 +364,7 @@ namespace QLCHGB
                             //Tổng tiền
                             PdfPTable tal_tien = new PdfPTable(2);
                             PdfPCell cell_tongtien = new PdfPCell(new Phrase("Tổng tiền ", f_12_nomal));
-                            PdfPCell cell_tien = new PdfPCell(new Phrase(txtTien, f_12_nomal));
+                            PdfPCell cell_tien = new PdfPCell(new Phrase(" "+txtTien, f_12_nomal));
                             PdfPCell cell_tienchu = new PdfPCell(new Phrase("Số tiền viết bằng chữ: " + lblTien, f_12_nomal));
                             cell_tongtien.HorizontalAlignment = Element.ALIGN_RIGHT;
                             cell_tongtien.PaddingRight = 8;

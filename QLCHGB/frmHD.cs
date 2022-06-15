@@ -14,6 +14,7 @@ namespace QLCHGB
         DataTable tblHDCT;
         char btn;
         String rbn, soluongc;
+        public string user = "";
 
         public String strMaHD;
         public Char flag;
@@ -36,6 +37,7 @@ namespace QLCHGB
             btn = 't';
             flag = 't';
             Enable();
+            cboMaKH.Focus();
             btnDong.Enabled = true;
             btnLuu.Enabled = true;
             btnThem.Enabled = false;
@@ -57,11 +59,15 @@ namespace QLCHGB
             Disable();
             Functions.FillCombo("SELECT MaGB, TenGB FROM GauBong", cboMaGB, "MaGB", "MaGB");
             cboMaGB.SelectedIndex = -1;
+            Functions.FillCombo("SELECT MaKH, TenKH FROM KhachHang", cboMaKH, "MaKH", "MaKH");
+            cboMaKH.SelectedIndex = -1;
 
             if (flag == 's')
             {
                 btnThem.Enabled = false;
                 txtMaHD.Text = strMaHD;
+                cboMaKH.Text = Functions.GetFieldValues("SELECT MaKH FROM HoaDon WHERE MaHD = N'" + strMaHD + "'");
+                cboMaKH_TextChanged(sender, e);
                 LoadDateGirdViewCT(strMaHD);
             }
             else if(flag == 'd')
@@ -69,6 +75,8 @@ namespace QLCHGB
                 btnThem.Enabled = false;
                 btnSua.Enabled = false;
                 txtMaHD.Text = strMaHD;
+                cboMaKH.Text = Functions.GetFieldValues("SELECT MaKH FROM HoaDon WHERE MaHD = N'" + strMaHD + "'");
+                cboMaKH_TextChanged(sender, e);
                 LoadDateGirdViewCT(strMaHD);
             }    
             else
@@ -82,12 +90,14 @@ namespace QLCHGB
         {
             txtMaHD.ReadOnly = true;
             cboMaGB.Enabled = false;
+            cboMaKH.Enabled = false;
             txtSL.Enabled = false;
             dtpThoiGian.Enabled = false;
         }
 
         private void Enable()
         {
+            cboMaKH.Enabled = true;
             cboMaGB.Enabled = true;
             txtSL.Enabled = true;
             txtDonGia.Enabled = true;
@@ -166,7 +176,12 @@ namespace QLCHGB
         {
             string sql;
             {
-
+                if (cboMaKH.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Chưa chọn mã khách hàng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboMaKH.Focus();
+                    return;
+                }
                 if (cboMaGB.Text.Trim().Length == 0)
                 {
                     MessageBox.Show("Chưa chọn mã gấu bông!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -222,8 +237,8 @@ namespace QLCHGB
                     sql = "SELECT MaHD FROM HoaDon WHERE MaHD=N'" + txtMaHD.Text.Trim() + "'";
                     if (!Functions.CheckKey(sql))//Chưa có mã HD
                     {
-                        sql = "INSERT INTO HoaDon(MaHD, ThoiGian) VALUES " +
-                            "(N'" + txtMaHD.Text.Trim() + "',N'" + dtpThoiGian.Text.Trim() + "')";
+                        sql = "INSERT INTO HoaDon(MaHD, ThoiGian, MaKH, Username) VALUES " +
+                            "(N'" + txtMaHD.Text.Trim() + "',N'" + dtpThoiGian.Text.Trim() + "',N'"+cboMaKH.Text.Trim()+"',N'"+user+"')";
                         Functions.RunSQL(sql);
                     }
 
@@ -233,6 +248,7 @@ namespace QLCHGB
                     sql = "UPDATE GauBong SET SLB = (SLB + " + txtSL.Text.Trim() + ") Where MaGB = N'" + cboMaGB.SelectedValue + "'";
                     Functions.RunSQL(sql);
                     LoadDateGirdViewCT(txtMaHD.Text.Trim());
+                    btnXoa.Enabled = true;
                 }
 
                 //Sửa
@@ -260,6 +276,7 @@ namespace QLCHGB
                         btnSua.Enabled = false;
                         btnHuy.Enabled = false;
                         btnLuu.Enabled = false;
+                        
                         Disable();
                     }
                 }
@@ -381,6 +398,10 @@ namespace QLCHGB
                             doc.Add(tbl1);
                             doc.Add(p_hoadon);
 
+                            //Thông tin khách hàng
+                            Paragraph p_kh = new Paragraph("Họ và tên khách hàng: " + txtTenKH.Text + "\nSố điện thoại: " + txtSDT.Text + "\nĐịa chỉ: " + txtDiaChi.Text, f_12_nomal);
+                            doc.Add(p_kh);
+
                             //Bảng CTHD
                             PdfPTable talCTHD = new PdfPTable(dgvCTHD.Columns.Count);
                             talCTHD.DefaultCell.Padding = 6;
@@ -407,7 +428,7 @@ namespace QLCHGB
                             //Tổng tiền
                             PdfPTable tal_tien = new PdfPTable(2);
                             PdfPCell cell_tongtien = new PdfPCell(new Phrase("Tổng tiền ", f_12_nomal));
-                            PdfPCell cell_tien = new PdfPCell(new Phrase(txtTongTien.Text, f_12_nomal));
+                            PdfPCell cell_tien = new PdfPCell(new Phrase(" "+txtTongTien.Text, f_12_nomal));
                             PdfPCell cell_tienchu = new PdfPCell(new Phrase("Số tiền viết bằng chữ: " + lblTien.Text, f_12_nomal));
                             cell_tongtien.HorizontalAlignment = Element.ALIGN_RIGHT;
                             cell_tongtien.PaddingRight = 8;
@@ -563,8 +584,30 @@ namespace QLCHGB
             }
         }
 
+        private void cboMaKH_TextChanged(object sender, EventArgs e)
+        {
+            string sql;
+            if (cboMaKH.Text == "")
+            {
+                txtTenKH.Text = "";
+                txtDiaChi.Text = "";
+                txtSDT.Text = "";
+            }
+            // Khi chọn Mã NCC thì các trường khác tự động hiện ra
+            sql = "Select TenKH from KhachHang where MaKH =N'" + cboMaKH.SelectedValue + "'";
+            txtTenKH.Text = Functions.GetFieldValues(sql);
+            sql = "Select DiaChi from KhachHang where MaKH =N'" + cboMaKH.SelectedValue + "'";
+            txtDiaChi.Text = Functions.GetFieldValues(sql);
+            sql = "Select SDT from KhachHang where MaKH =N'" + cboMaKH.SelectedValue + "'";
+            txtSDT.Text = Functions.GetFieldValues(sql);
+        }
+
         private void ResetValues()
         {
+            cboMaKH.Text = "";
+            txtTenKH.Text = "";
+            txtDiaChi.Text = "";
+            txtSDT.Text = "";
             dtpThoiGian.Text = "";
             cboMaGB.Text = "";
             txtTenGB.Text = "";

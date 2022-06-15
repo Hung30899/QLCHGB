@@ -26,6 +26,7 @@ namespace QLCHGB
             {
                 btnLogout.Text = "   " + user;
             }
+  
         }
 
         private Color SelectThemeColor()
@@ -110,6 +111,7 @@ namespace QLCHGB
             lblHome.Text = "HÓA ĐƠN";
             Functions.CloseForm(this);
             frmDSHD frmDSHD = new frmDSHD();
+            frmDSHD.user = user;
             Functions.MenuClick(frmDSHD, this);
             panelDesktop.Visible = false;
             ActivateButton(sender);
@@ -161,6 +163,16 @@ namespace QLCHGB
             this.Hide();
             frmMain frm = new frmMain();
             frm.Show();
+        }
+
+        private void btnKH_Click(object sender, EventArgs e)
+        {
+            lblHome.Text = "KHÁCH HÀNG";
+            Functions.CloseForm(this);
+            frmKH frmKH = new frmKH();
+            Functions.MenuClick(frmKH, this);
+            panelDesktop.Visible = false;
+            ActivateButton(sender);
         }
     }
 }

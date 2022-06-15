@@ -30,6 +30,7 @@ namespace QLCHGB
         private void InitializeComponent()
         {
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnKH = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnND = new System.Windows.Forms.Button();
             this.btnGiaBan = new System.Windows.Forms.Button();
@@ -51,6 +52,7 @@ namespace QLCHGB
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnKH);
             this.panelMenu.Controls.Add(this.btnLogout);
             this.panelMenu.Controls.Add(this.btnND);
             this.panelMenu.Controls.Add(this.btnGiaBan);
@@ -67,6 +69,28 @@ namespace QLCHGB
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 749);
             this.panelMenu.TabIndex = 3;
+            // 
+            // btnKH
+            // 
+            this.btnKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.btnKH.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnKH.FlatAppearance.BorderSize = 0;
+            this.btnKH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKH.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKH.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnKH.Image = global::QLCHGB.Properties.Resources.price_tag;
+            this.btnKH.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKH.Location = new System.Drawing.Point(0, 512);
+            this.btnKH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnKH.Name = "btnKH";
+            this.btnKH.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btnKH.Size = new System.Drawing.Size(220, 60);
+            this.btnKH.TabIndex = 18;
+            this.btnKH.Text = "   Khách hàng";
+            this.btnKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnKH.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnKH.UseVisualStyleBackColor = false;
+            this.btnKH.Click += new System.EventHandler(this.btnKH_Click);
             // 
             // btnLogout
             // 
@@ -347,6 +371,7 @@ namespace QLCHGB
         private System.Windows.Forms.Label lblHome;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Button btnKH;
     }
 }
 
