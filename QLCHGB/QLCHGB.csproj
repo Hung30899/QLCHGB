@@ -124,6 +124,12 @@
     <Compile Include="frmDSPN.Designer.cs">
       <DependentUpon>frmDSPN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDSTK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDSTK.Designer.cs">
+      <DependentUpon>frmDSTK.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDSPN.resx">
       <DependentUpon>frmDSPN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDSTK.resx">
+      <DependentUpon>frmDSTK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGB.resx">
       <DependentUpon>frmGB.cs</DependentUpon>
@@ -357,6 +366,10 @@
   <ItemGroup>
     <None Include="Resources\statistics %282%29.png" />
     <None Include="Resources\statistics.png" />
+    <None Include="Resources\export %281%29.png" />
+    <None Include="Resources\import %281%29.png" />
+    <None Include="Resources\inventory %281%29.png" />
+    <None Include="Resources\inventory %282%29.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

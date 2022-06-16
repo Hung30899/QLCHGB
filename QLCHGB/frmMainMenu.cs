@@ -13,6 +13,8 @@ namespace QLCHGB
         private int tempIndex;
 
         public string user="";
+
+        public string loai="";
         public frmMainMenu()
         {
             InitializeComponent();
@@ -25,6 +27,21 @@ namespace QLCHGB
             if (user != "")
             {
                 btnLogout.Text = "   " + user;
+            }
+            if (loai == "Nhân viên")
+            {
+                btnPN.Visible = false;
+                btnND.Visible = false;
+                btnGiaBan.Visible = false;
+                btnNCC.Visible = false;
+              
+            }
+            else
+            {
+                btnPN.Visible = true;
+                btnND.Visible = true;
+                btnGiaBan.Visible = true;
+                btnNCC.Visible = true;
             }
   
         }
@@ -99,6 +116,7 @@ namespace QLCHGB
             lblHome.Text = "PHIẾU NHẬP";
             Functions.CloseForm(this);
             frmDSPN frmDSPN = new frmDSPN();
+            frmDSPN.user = user;
             Functions.MenuClick(frmDSPN, this);
             panelDesktop.Visible = false;
             ActivateButton(sender);
@@ -121,8 +139,8 @@ namespace QLCHGB
         {
             lblHome.Text = "THỐNG KÊ";
             Functions.CloseForm(this);
-            frmTK frmTK = new frmTK();
-            Functions.MenuClick(frmTK, this);
+            frmDSTK frmDSTK = new frmDSTK();
+            Functions.MenuClick(frmDSTK, this);
             panelDesktop.Visible = false;
             ActivateButton(sender);
 

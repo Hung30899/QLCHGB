@@ -31,6 +31,7 @@ namespace QLCHGB
             txtPass.Enabled = false;
             txtHoTen.Enabled = false;
             txtSDT.Enabled = false;
+            cboLoai.Enabled = false;
             txtDiaChi.Enabled = false;
             dtpNgaySinh.Enabled = false;
 
@@ -82,6 +83,7 @@ namespace QLCHGB
             txtDiaChi.Text = "";
             txtHoTen.Text = "";
             txtSDT.Text = "";
+            cboLoai.Text = "";
             dtpNgaySinh.Text = "";
             rbnNam.Checked = true;
         }
@@ -92,6 +94,7 @@ namespace QLCHGB
             txtHoTen.Enabled = true;
             txtDiaChi.Enabled = true;
             txtSDT.Enabled = true;
+            cboLoai.Enabled = true;
             dtpNgaySinh.Enabled = true;
 
             rbnNam.Enabled = true;
@@ -177,6 +180,12 @@ namespace QLCHGB
                     return;
                 }
 
+                if (cboLoai.Text.Trim().Length == 0)
+                {
+                    MessageBox.Show("Bạn phải chọn loại tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    cboLoai.Focus();
+                    return;
+                }
                 if (txtDiaChi.Text.Trim().Length == 0)
                 {
                     MessageBox.Show("Bạn phải nhập địa chỉ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -206,9 +215,9 @@ namespace QLCHGB
                         return;
                     }
 
-                    sql = "INSERT INTO NguoiDung(Username,Password,Ten,NgaySinh,GioiTinh,DiaChi,SDT) VALUES" +
+                    sql = "INSERT INTO NguoiDung(Username,Password,Ten,Loai,NgaySinh,GioiTinh,DiaChi,SDT) VALUES" +
                         "(N'" + txtUser.Text.Trim() + "',N'" + txtPass.Text.Trim() + "'," +
-                        "N'"+ txtHoTen.Text.Trim() + "','" + dtpNgaySinh.Text + "',N'" + gt + "',N'" + txtDiaChi.Text.Trim() + "','" + txtSDT.Text.Trim() + "')";
+                        "N'"+ txtHoTen.Text.Trim() + "',N'"+cboLoai.Text.Trim()+"','" + dtpNgaySinh.Text + "',N'" + gt + "',N'" + txtDiaChi.Text.Trim() + "','" + txtSDT.Text.Trim() + "')";
 
                     Functions.RunSQL(sql);
                     LoadDataGridView();
@@ -227,7 +236,7 @@ namespace QLCHGB
                     if (MessageBox.Show("Bạn có muốn lưu chỉnh sửa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
                         sql = "UPDATE NguoiDung SET Password=N'" + txtPass.Text.Trim() + "',"+
-                        "Ten=N'" + txtHoTen.Text.Trim() + "',NgaySinh='" + dtpNgaySinh.Text + "'," +
+                        "Ten=N'" + txtHoTen.Text.Trim() + "',Loai = N'"+cboLoai.Text.Trim()+"',NgaySinh='" + dtpNgaySinh.Text + "'," +
                         "GioiTinh=N'" + gt + "',DiaChi=N'" + txtDiaChi.Text.Trim() + "',SDT=N'" + txtSDT.Text.Trim() + "' WHERE Username=N'" + txtUser.Text + "'";
 
                         Functions.RunSQL(sql);
@@ -277,7 +286,8 @@ namespace QLCHGB
             txtUser.Text = dgvUser.CurrentRow.Cells[0].Value.ToString();
             txtPass.Text = dgvUser.CurrentRow.Cells[1].Value.ToString();
             txtHoTen.Text = dgvUser.CurrentRow.Cells[2].Value.ToString();
-            dtpNgaySinh.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            cboLoai.Text = dgvUser.CurrentRow.Cells[3].Value.ToString();
+            dtpNgaySinh.Text = dgvUser.CurrentRow.Cells[4].Value.ToString();
             if (dgvUser.CurrentRow.Cells[4].Value.ToString() == "Nam")
                 rbnNam.Checked = true;
             else 
@@ -330,10 +340,11 @@ namespace QLCHGB
             dgvUser.Columns[0].HeaderText = "Username";
             dgvUser.Columns[1].HeaderText = "Password";
             dgvUser.Columns[2].HeaderText = "Họ tên";
-            dgvUser.Columns[3].HeaderText = "Ngày Sinh";
-            dgvUser.Columns[4].HeaderText = "Giới tính";
-            dgvUser.Columns[5].HeaderText = "Địa chỉ";
-            dgvUser.Columns[6].HeaderText = "SDT";
+            dgvUser.Columns[3].HeaderText = "Loại tài khoản";
+            dgvUser.Columns[4].HeaderText = "Ngày Sinh";
+            dgvUser.Columns[5].HeaderText = "Giới tính";
+            dgvUser.Columns[6].HeaderText = "Địa chỉ";
+            dgvUser.Columns[7].HeaderText = "SDT";
 
             dgvUser.Columns[0].Width = 150;
             dgvUser.Columns[1].Width = 150;
@@ -342,6 +353,7 @@ namespace QLCHGB
             dgvUser.Columns[4].Width = 150;
             dgvUser.Columns[5].Width = 150;
             dgvUser.Columns[6].Width = 150;
+            dgvUser.Columns[7].Width = 150;
 
             dgvUser.AllowUserToAddRows = false;
             dgvUser.EditMode = DataGridViewEditMode.EditProgrammatically;

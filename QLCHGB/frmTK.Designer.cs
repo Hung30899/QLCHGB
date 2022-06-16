@@ -48,11 +48,12 @@ namespace QLCHGB
             this.lblSLB = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblTien = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblTongSL = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTieuDe = new System.Windows.Forms.Label();
             this.dgvTK = new System.Windows.Forms.DataGridView();
+            this.btnDong = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +73,7 @@ namespace QLCHGB
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnDong);
             this.groupBox2.Controls.Add(this.cboNam);
             this.groupBox2.Controls.Add(this.cboQuy);
             this.groupBox2.Controls.Add(this.dtpThang);
@@ -235,14 +237,14 @@ namespace QLCHGB
             this.btnThongKe.BackColor = System.Drawing.Color.White;
             this.btnThongKe.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThongKe.Image = global::QLCHGB.Properties.Resources.statistics__2_;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(797, 29);
+            this.btnThongKe.Location = new System.Drawing.Point(797, 27);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(193, 30);
+            this.btnThongKe.Size = new System.Drawing.Size(154, 38);
             this.btnThongKe.TabIndex = 5;
-            this.btnThongKe.Text = "   Thống kê doanh thu";
+            this.btnThongKe.Text = "   Thống kê";
             this.btnThongKe.UseVisualStyleBackColor = true;
             this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
             // 
@@ -253,7 +255,7 @@ namespace QLCHGB
             this.panel3.Controls.Add(this.lblSLB);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblTien);
-            this.panel3.Controls.Add(this.label13);
+            this.panel3.Controls.Add(this.lblTongSL);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 578);
             this.panel3.Name = "panel3";
@@ -300,22 +302,22 @@ namespace QLCHGB
             this.lblTien.Size = new System.Drawing.Size(0, 20);
             this.lblTien.TabIndex = 29;
             // 
-            // label13
+            // lblTongSL
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label13.Location = new System.Drawing.Point(21, 16);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(161, 21);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Tổng số lượng bán: ";
+            this.lblTongSL.AutoSize = true;
+            this.lblTongSL.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongSL.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTongSL.Location = new System.Drawing.Point(21, 16);
+            this.lblTongSL.Name = "lblTongSL";
+            this.lblTongSL.Size = new System.Drawing.Size(161, 21);
+            this.lblTongSL.TabIndex = 26;
+            this.lblTongSL.Text = "Tổng số lượng bán: ";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.panel2.Controls.Add(this.lbl);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblTieuDe);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 118);
             this.panel2.Name = "panel2";
@@ -335,17 +337,17 @@ namespace QLCHGB
             this.lbl.TabIndex = 28;
             this.lbl.Click += new System.EventHandler(this.lbl_Click);
             // 
-            // label1
+            // lblTieuDe
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(50, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 24);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "THỐNG KÊ DOANG THU: ";
+            this.lblTieuDe.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblTieuDe.AutoSize = true;
+            this.lblTieuDe.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTieuDe.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTieuDe.Location = new System.Drawing.Point(50, 15);
+            this.lblTieuDe.Name = "lblTieuDe";
+            this.lblTieuDe.Size = new System.Drawing.Size(265, 24);
+            this.lblTieuDe.TabIndex = 27;
+            this.lblTieuDe.Text = "THỐNG KÊ DOANG THU: ";
             // 
             // dgvTK
             // 
@@ -359,6 +361,22 @@ namespace QLCHGB
             this.dgvTK.Size = new System.Drawing.Size(1283, 406);
             this.dgvTK.TabIndex = 25;
             this.dgvTK.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTK_CellContentClick);
+            // 
+            // btnDong
+            // 
+            this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDong.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btnDong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDong.Image = global::QLCHGB.Properties.Resources.padlock;
+            this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDong.Location = new System.Drawing.Point(871, 74);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(80, 30);
+            this.btnDong.TabIndex = 33;
+            this.btnDong.Text = "  Đóng";
+            this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // frmTK
             // 
@@ -405,10 +423,11 @@ namespace QLCHGB
         private System.Windows.Forms.Label lblSLB;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblTien;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblTongSL;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbl;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTieuDe;
         private System.Windows.Forms.DataGridView dgvTK;
+        private System.Windows.Forms.Button btnDong;
     }
 }

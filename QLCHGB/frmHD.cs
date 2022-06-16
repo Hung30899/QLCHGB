@@ -110,12 +110,14 @@ namespace QLCHGB
             txtSL.Enabled = true;
             txtDonGia.Enabled = true;
 
+            dtpThoiGian.Enabled = true;
+            cboMaKH.Enabled = true;
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnDong.Enabled = true;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
-            cboMaGB.Enabled = true;
+           // cboMaGB.Enabled = true;
             soluongc = txtSL.Text.Trim();
         }
 
@@ -265,6 +267,8 @@ namespace QLCHGB
                             txtSL.Focus();
                             return;
                         }
+                        sql = "UPDATE HoaDon SET ThoiGian=N'" + dtpThoiGian.Text + "',MaKH='" + cboMaKH.Text.Trim() + "',Username = N'" + user.Trim() + "' Where MaHD = N'" + txtMaHD.Text.Trim() + "'";
+                        Functions.RunSQL(sql);
                         sql = "UPDATE CTHoaDon SET SoLuong=N'" + txtSL.Text.Trim() + "' WHERE MaHD=N'" + txtMaHD.Text + "' AND MaGB= N'" + cboMaGB.SelectedValue + "'";
                         Functions.RunSQL(sql);
                         MessageBox.Show("Đã cập nhật số lượng mã gấu bông: " + cboMaGB.SelectedValue + "!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

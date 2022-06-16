@@ -10,6 +10,7 @@ namespace QLCHGB
     {
         DataTable tblPN;
 
+        public string user = "";
         public String strMaPN;
         public Char flag;
         public frmDSPN()
@@ -20,6 +21,7 @@ namespace QLCHGB
         private void btnLapPN_Click(object sender, EventArgs e)
         {
             frmPN frmPN = new frmPN();
+            frmPN.user = user;
             frmPN.MdiParent = this.ParentForm;
             frmPN.Dock = DockStyle.Fill;
             frmPN.Show();
@@ -36,6 +38,7 @@ namespace QLCHGB
             frmPN frmPN = new frmPN();
             frmPN.MdiParent = this.ParentForm;
             frmPN.strMaPN = strMaPN;
+            frmPN.user = user;
             frmPN.flag = 's';
             frmPN.Dock = DockStyle.Fill;
             frmPN.Show();
@@ -162,7 +165,7 @@ namespace QLCHGB
         {
             String sql;
             sql = @"
-                SELECT a.MaPN,a.ThoiGian,a.MaNCC,b.TenNCC,c.Tong
+                SELECT a.MaPN,a.ThoiGian,a.MaNCC,b.TenNCC,c.Tong,a.Username
                 FROM PhieuNhap AS a
                 Left join NCC AS b on a.MaNCC = b.MaNCC
                 Left join ViewTongTien as c on a.MaPN = c.MaPN
@@ -174,12 +177,14 @@ namespace QLCHGB
             dgvPN.Columns[2].HeaderText = "Mã nhà cung cấp";
             dgvPN.Columns[3].HeaderText = "Tên nhà cung cấp";
             dgvPN.Columns[4].HeaderText = "Tổng tiền";
+            dgvPN.Columns[5].HeaderText = "Người lập phiếu nhập";
 
             dgvPN.Columns[0].Width = 200;
             dgvPN.Columns[1].Width = 200;
             dgvPN.Columns[2].Width = 200;
             dgvPN.Columns[3].Width = 250;
             dgvPN.Columns[4].Width = 250;
+            dgvPN.Columns[5].Width = 250;
 
             dgvPN.AllowUserToAddRows = false;
             dgvPN.EditMode = DataGridViewEditMode.EditProgrammatically;

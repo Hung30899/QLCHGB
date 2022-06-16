@@ -13,6 +13,7 @@ namespace QLCHGB
         char btn;
         String soluongc;
 
+        public string user = "";
         public String strMaPN;
         public Char flag;
 
@@ -75,13 +76,15 @@ namespace QLCHGB
             btn = 's';
             txtSL.Enabled = true;
             txtDonGia.Enabled = true;
+            dtpThoiGian.Enabled = true;
+            cboMaNCC.Enabled = true;
 
             btnThem.Enabled = false;
             btnSua.Enabled = false;
             btnDong.Enabled = true;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
-            cboMaGB.Enabled = true;
+          //  cboMaGB.Enabled = true;
             soluongc = txtSL.Text.Trim();
         }
 
@@ -163,8 +166,8 @@ namespace QLCHGB
                     sql = "SELECT MaPN FROM PhieuNhap WHERE MaPN=N'" + txtMaPN.Text.Trim() + "'";
                     if (!Functions.CheckKey(sql))//Chưa có mã PN
                     {
-                        sql = "INSERT INTO PhieuNhap(MaPN, ThoiGian, MaNCC) VALUES " +
-                            "(N'" + txtMaPN.Text.Trim() + "',N'" + dtpThoiGian.Text.Trim() + "',N'" + cboMaNCC.SelectedValue + "')";
+                        sql = "INSERT INTO PhieuNhap(MaPN, ThoiGian, MaNCC,Username) VALUES " +
+                            "(N'" + txtMaPN.Text.Trim() + "',N'" + dtpThoiGian.Text.Trim() + "',N'" + cboMaNCC.SelectedValue + "',N'" + user + "')";
                         Functions.RunSQL(sql);
                     }
 
@@ -218,11 +221,14 @@ namespace QLCHGB
                 {
                     if (MessageBox.Show("Bạn có muốn lưu chỉnh sửa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
-                        sql = "UPDATE CTPhieuNhap SET SoLuong=N'" + txtSL.Text.Trim() + "' WHERE MaPN=N'" + txtMaPN.Text + "' AND MaGB= N'" + cboMaGB.SelectedValue + "'";
+                        sql = "UPDATE PhieuNhap SET ThoiGian=N'"+dtpThoiGian.Text+"',MaNCC='"+cboMaNCC.Text.Trim()+"',Username = N'"+user.Trim()+"' Where MaPN = N'" + txtMaPN.Text.Trim() + "'";
+                        Functions.RunSQL(sql);
+                        sql = "UPDATE CTPhieuNhap SET SoLuong=N'" + txtSL.Text.Trim() + "' WHERE MaPN=N'" + txtMaPN.Text.Trim() + "' AND MaGB= N'" + cboMaGB.SelectedValue + "'";
                         Functions.RunSQL(sql);
                         MessageBox.Show("Đã cập nhật số lượng mã gấu bông: " + cboMaGB.SelectedValue + "!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         sql = "UPDATE GauBong SET SLN = (SLN + " + txtSL.Text.Trim() + " - " + soluongc + ") Where MaGB = N'" + cboMaGB.SelectedValue + "'";
                         Functions.RunSQL(sql);
+                       
                         LoadDateGirdViewCT(txtMaPN.Text.Trim());
                      //   btnXoa.Enabled = true;
                      //   btnThem.Enabled = true;

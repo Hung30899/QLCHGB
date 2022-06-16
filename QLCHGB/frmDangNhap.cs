@@ -38,6 +38,9 @@ namespace QLCHGB
             {
                 frmMainMenu frm = new frmMainMenu();
                 frm.user = txtUser.Text.Trim();
+                sql = "Select Loai from NguoiDung where Username =N'" + txtUser.Text.Trim() + "'";
+                string loai = Functions.GetFieldValues(sql);
+                frm.loai = loai.Trim();
                 frm.ShowDialog();
                 this.Hide();
             }

@@ -204,7 +204,7 @@ namespace QLCHGB
             string sql;
             if (ckbThoiGian.Checked)
                 sql = @"
-                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong
+                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong,a.Username
                 FROM HoaDon AS a
                 Left join KhachHang as b on a.MaKH = b.MaKH
                 Left join ViewTongTienHD as c on a.MaHD = c.MaHD
@@ -212,7 +212,7 @@ namespace QLCHGB
 
             else
                 sql = @"
-                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong
+                SELECT a.MaHD,a.ThoiGian,b.TenKH,a.Username,c.Tong,a.Username
                 FROM HoaDon AS a
                 Left join KhachHang as b on a.MaKH = b.MaKH
                 Left join ViewTongTienHD as c on a.MaHD = c.MaHD
