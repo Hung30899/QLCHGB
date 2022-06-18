@@ -171,7 +171,6 @@ namespace QLCHGB
                     return;
                 }
                
-                //Thêm gạch
                 if (btn == 't')
                 {
                     sql = "SELECT * FROM GiaBan WHERE Ngay=N'" + dtpNgay.Text.Trim() + "' and MaGB=N'"+cboMaGB.Text.Trim()+"'";
@@ -180,6 +179,25 @@ namespace QLCHGB
                         MessageBox.Show("Đã tồn tại đơn giá ngày:"+ dtpNgay.Text.Trim()+ "!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         cboMaGB.Focus();
                         cboMaGB.Text = "";
+                        return;
+                    }
+
+                    sql = "Select Sum(DonGia*SoLuong)/Sum(Soluong) From CTPhieuNhap Where MaGB = N'"+cboMaGB.Text.Trim()+"' Group by MaGB";
+                    string giaNhapTB = Functions.GetFieldValues(sql);
+
+                    if (giaNhapTB == "")
+                    {
+                        MessageBox.Show("Mặt hàng này chưa có hàng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }    
+                    
+                    Double giaTB = Math.Round(Convert.ToDouble(giaNhapTB));
+                    Double giaBan = Convert.ToDouble(txtDonGia.Text.Trim());
+
+                    if (giaBan <= giaTB)
+                    {
+                        MessageBox.Show("Giá bán được thiết lập đang nhỏ hơn giá nhập trung bình: "+giaTB.ToString()+" VNĐ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtDonGia.Focus();    
                         return;
                     }
 
@@ -203,6 +221,19 @@ namespace QLCHGB
                 {
                     if (MessageBox.Show("Bạn có muốn lưu thông tin chỉnh sửa không?", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                     {
+                        sql = "Select Sum(DonGia*Soluong)/Sum(Soluong) From CTPhieuNhap Where MaGB = N'" + cboMaGB.Text.Trim() + "' Group by MaGB";
+                        string giaNhapTB = Functions.GetFieldValues(sql);
+
+                        Double giaTB = Math.Round(Convert.ToDouble(giaNhapTB));
+                        Double giaBan = Convert.ToDouble(txtDonGia.Text.Trim());
+
+                        if (giaBan <= giaTB)
+                        {
+                            MessageBox.Show("Giá bán được thiết lập đang nhỏ hơn giá nhập trung bình: " +  giaTB.ToString() + " VNĐ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            txtDonGia.Focus();
+                            return;
+                        }
+
                         sql = "UPDATE GiaBan SET DonGia = "+txtDonGia.Text.Trim()+"  Where Ngay=N'" + dtpNgay.Text.Trim() + "' and MaGB=N'" + cboMaGB.Text.Trim() + "'";
 
                         Functions.RunSQL(sql);

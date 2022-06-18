@@ -31,24 +31,24 @@ namespace QLCHGB
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDSTK));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lblKH = new System.Windows.Forms.Label();
-            this.lblDT = new System.Windows.Forms.Label();
-            this.lblDTHN = new System.Windows.Forms.Label();
-            this.lblTN = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblDT = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblTN = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblDTHN = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblKH = new System.Windows.Forms.Label();
             this.btnBCTK = new System.Windows.Forms.Button();
             this.btnTKHN = new System.Windows.Forms.Button();
             this.btnTKDT = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
-            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox3
@@ -71,25 +71,23 @@ namespace QLCHGB
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Báo cáo/ Thống kê";
             // 
-            // groupBox1
+            // pictureBox1
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.groupBox1.Controls.Add(this.lblKH);
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(132, 54);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(250, 145);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tổng số lượng khách hàng";
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(137, 234);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // groupBox2
             // 
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.groupBox2.Controls.Add(this.lblDT);
+            this.groupBox2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(390, 54);
             this.groupBox2.Name = "groupBox2";
@@ -97,45 +95,7 @@ namespace QLCHGB
             this.groupBox2.Size = new System.Drawing.Size(250, 145);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tổng doanh thu";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.groupBox4.Controls.Add(this.lblTN);
-            this.groupBox4.ForeColor = System.Drawing.Color.Black;
-            this.groupBox4.Location = new System.Drawing.Point(905, 54);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(250, 145);
-            this.groupBox4.TabIndex = 7;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Tổng tiền nhập";
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.groupBox5.Controls.Add(this.lblDTHN);
-            this.groupBox5.ForeColor = System.Drawing.Color.Black;
-            this.groupBox5.Location = new System.Drawing.Point(647, 54);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(250, 145);
-            this.groupBox5.TabIndex = 7;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Doanh thu hôm nay";
-            // 
-            // lblKH
-            // 
-            this.lblKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblKH.AutoSize = true;
-            this.lblKH.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKH.Location = new System.Drawing.Point(30, 60);
-            this.lblKH.Name = "lblKH";
-            this.lblKH.Size = new System.Drawing.Size(146, 24);
-            this.lblKH.TabIndex = 0;
-            this.lblKH.Text = "10 Khách hàng";
-            this.lblKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupBox2.Text = "Tổng doanh thu năm hiện tại";
             // 
             // lblDT
             // 
@@ -149,17 +109,19 @@ namespace QLCHGB
             this.lblDT.Text = "5000000 VNĐ";
             this.lblDT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDTHN
+            // groupBox4
             // 
-            this.lblDTHN.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblDTHN.AutoSize = true;
-            this.lblDTHN.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDTHN.Location = new System.Drawing.Point(30, 60);
-            this.lblDTHN.Name = "lblDTHN";
-            this.lblDTHN.Size = new System.Drawing.Size(137, 24);
-            this.lblDTHN.TabIndex = 1;
-            this.lblDTHN.Text = "1000000 VNĐ";
-            this.lblDTHN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.groupBox4.Controls.Add(this.lblTN);
+            this.groupBox4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.Black;
+            this.groupBox4.Location = new System.Drawing.Point(905, 54);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(250, 145);
+            this.groupBox4.TabIndex = 7;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Tổng tiền nhập năm hiện tại";
             // 
             // lblTN
             // 
@@ -173,16 +135,58 @@ namespace QLCHGB
             this.lblTN.Text = "1000000000 VNĐ";
             this.lblTN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox1
+            // groupBox5
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(137, 234);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 256);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.groupBox5.Controls.Add(this.lblDTHN);
+            this.groupBox5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.Location = new System.Drawing.Point(647, 54);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(250, 145);
+            this.groupBox5.TabIndex = 7;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Doanh thu hôm nay";
+            // 
+            // lblDTHN
+            // 
+            this.lblDTHN.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblDTHN.AutoSize = true;
+            this.lblDTHN.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDTHN.Location = new System.Drawing.Point(30, 60);
+            this.lblDTHN.Name = "lblDTHN";
+            this.lblDTHN.Size = new System.Drawing.Size(137, 24);
+            this.lblDTHN.TabIndex = 1;
+            this.lblDTHN.Text = "1000000 VNĐ";
+            this.lblDTHN.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.groupBox1.Controls.Add(this.lblKH);
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(132, 54);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.groupBox1.Size = new System.Drawing.Size(250, 145);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tổng số lượng khách hàng";
+            // 
+            // lblKH
+            // 
+            this.lblKH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblKH.AutoSize = true;
+            this.lblKH.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKH.Location = new System.Drawing.Point(30, 60);
+            this.lblKH.Name = "lblKH";
+            this.lblKH.Size = new System.Drawing.Size(146, 24);
+            this.lblKH.TabIndex = 0;
+            this.lblKH.Text = "10 Khách hàng";
+            this.lblKH.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnBCTK
             // 
@@ -198,6 +202,7 @@ namespace QLCHGB
             this.btnBCTK.TabIndex = 5;
             this.btnBCTK.Text = "Báo cáo tồn kho";
             this.btnBCTK.UseVisualStyleBackColor = true;
+            this.btnBCTK.Click += new System.EventHandler(this.btnBCTK_Click);
             // 
             // btnTKHN
             // 
@@ -237,20 +242,21 @@ namespace QLCHGB
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 652);
             this.Controls.Add(this.groupBox3);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDSTK";
             this.Text = "frmDSTK";
             this.Load += new System.EventHandler(this.frmDSTK_Load);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }

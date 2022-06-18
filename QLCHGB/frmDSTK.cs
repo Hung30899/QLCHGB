@@ -39,7 +39,9 @@ namespace QLCHGB
         private void DoanhThu()
         {
             sql = @"select isnull(sum(b.DonGia*b.SoLuong),0) from HoaDon as a
-                    Left join CTHoaDon as b on a.MaHD = b.MaHD;";
+                    Left join CTHoaDon as b on a.MaHD = b.MaHD
+                    Where Year(a.ThoiGian) = Year(GETDATE())";
+
             lblDT.Text = Functions.GetFieldValues(sql) + " VNĐ";
         }
         private void KhachHang()
@@ -57,7 +59,8 @@ namespace QLCHGB
         private void TN()
         {
             sql = @"select isnull(sum(b.DonGia*b.SoLuong),0) from PhieuNhap as a
-                    Left join CTPhieuNhap as b on a.MaPN = b.MaPN;";
+                    Left join CTPhieuNhap as b on a.MaPN = b.MaPN
+                    Where Year(a.ThoiGian) = Year(GETDATE());";
             lblTN.Text = Functions.GetFieldValues(sql) + " VNĐ";
         }
 
@@ -68,6 +71,15 @@ namespace QLCHGB
             frmTK.MdiParent = this.ParentForm;
             frmTK.Dock = DockStyle.Fill;
             frmTK.Show();
+        }
+
+        private void btnBCTK_Click(object sender, EventArgs e)
+        {
+            frmBCTonKho frmBCTonKho = new frmBCTonKho();
+
+            frmBCTonKho.MdiParent = this.ParentForm;
+            frmBCTonKho.Dock = DockStyle.Fill;
+            frmBCTonKho.Show();
         }
     }
 }

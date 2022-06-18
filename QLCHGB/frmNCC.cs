@@ -33,8 +33,8 @@ namespace QLCHGB
             tblNCC = Functions.GetDataToTable(sql);
             dgvNCC.DataSource = tblNCC;
             dgvNCC.Columns[0].HeaderText = "Mã nhà cung cấp";
-            dgvNCC.Columns[2].HeaderText = "Tên nhà cung cấp";
-            dgvNCC.Columns[1].HeaderText = "Địa chỉ";
+            dgvNCC.Columns[1].HeaderText = "Tên nhà cung cấp";
+            dgvNCC.Columns[2].HeaderText = "Địa chỉ";
             dgvNCC.Columns[3].HeaderText = "Số điện thoại";
        
             dgvNCC.Columns[0].Width = 200;

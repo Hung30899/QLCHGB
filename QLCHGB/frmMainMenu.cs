@@ -34,7 +34,8 @@ namespace QLCHGB
                 btnND.Visible = false;
                 btnGiaBan.Visible = false;
                 btnNCC.Visible = false;
-              
+                btnGB.Visible = false;
+                btnTK.Visible = false;
             }
             else
             {
@@ -42,6 +43,8 @@ namespace QLCHGB
                 btnND.Visible = true;
                 btnGiaBan.Visible = true;
                 btnNCC.Visible = true;
+                btnGB.Visible = true;
+                btnTK.Visible = true;
             }
   
         }

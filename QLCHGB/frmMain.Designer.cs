@@ -30,11 +30,9 @@ namespace QLCHGB
         private void InitializeComponent()
         {
             this.panelDesktop = new System.Windows.Forms.Panel();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.panelTitleBar = new System.Windows.Forms.Panel();
-            this.lblHome = new System.Windows.Forms.Label();
             this.btnDN = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnND = new System.Windows.Forms.Button();
             this.btnGiaBan = new System.Windows.Forms.Button();
@@ -44,6 +42,8 @@ namespace QLCHGB
             this.btnNCC = new System.Windows.Forms.Button();
             this.btnGB = new System.Windows.Forms.Button();
             this.btnLOGO = new System.Windows.Forms.Button();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.lblHome = new System.Windows.Forms.Label();
             this.panelDesktop.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -59,49 +59,6 @@ namespace QLCHGB
             this.panelDesktop.Name = "panelDesktop";
             this.panelDesktop.Size = new System.Drawing.Size(1092, 691);
             this.panelDesktop.TabIndex = 10;
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.btnLogout);
-            this.panelMenu.Controls.Add(this.btnND);
-            this.panelMenu.Controls.Add(this.btnGiaBan);
-            this.panelMenu.Controls.Add(this.btnTK);
-            this.panelMenu.Controls.Add(this.btnHD);
-            this.panelMenu.Controls.Add(this.btnPN);
-            this.panelMenu.Controls.Add(this.btnNCC);
-            this.panelMenu.Controls.Add(this.btnGB);
-            this.panelMenu.Controls.Add(this.btnLOGO);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelMenu.Location = new System.Drawing.Point(0, 58);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 691);
-            this.panelMenu.TabIndex = 8;
-            // 
-            // panelTitleBar
-            // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(138)))));
-            this.panelTitleBar.Controls.Add(this.lblHome);
-            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitleBar.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
-            this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1312, 58);
-            this.panelTitleBar.TabIndex = 9;
-            // 
-            // lblHome
-            // 
-            this.lblHome.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblHome.AutoSize = true;
-            this.lblHome.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHome.ForeColor = System.Drawing.Color.White;
-            this.lblHome.Location = new System.Drawing.Point(579, 14);
-            this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(94, 29);
-            this.lblHome.TabIndex = 0;
-            this.lblHome.Text = "HOME";
             // 
             // btnDN
             // 
@@ -129,6 +86,26 @@ namespace QLCHGB
             this.label1.TabIndex = 0;
             this.label1.Text = "PHẦM MỀM QUẢN LÝ CỬA HÀNG BÁN GẤU BÔNG";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.btnLogout);
+            this.panelMenu.Controls.Add(this.btnND);
+            this.panelMenu.Controls.Add(this.btnGiaBan);
+            this.panelMenu.Controls.Add(this.btnTK);
+            this.panelMenu.Controls.Add(this.btnHD);
+            this.panelMenu.Controls.Add(this.btnPN);
+            this.panelMenu.Controls.Add(this.btnNCC);
+            this.panelMenu.Controls.Add(this.btnGB);
+            this.panelMenu.Controls.Add(this.btnLOGO);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelMenu.Location = new System.Drawing.Point(0, 58);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(220, 691);
+            this.panelMenu.TabIndex = 8;
             // 
             // btnLogout
             // 
@@ -317,6 +294,29 @@ namespace QLCHGB
             this.btnLOGO.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLOGO.UseVisualStyleBackColor = false;
             // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(150)))), ((int)(((byte)(138)))));
+            this.panelTitleBar.Controls.Add(this.lblHome);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelTitleBar.Location = new System.Drawing.Point(0, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(1312, 58);
+            this.panelTitleBar.TabIndex = 9;
+            // 
+            // lblHome
+            // 
+            this.lblHome.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblHome.AutoSize = true;
+            this.lblHome.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHome.ForeColor = System.Drawing.Color.White;
+            this.lblHome.Location = new System.Drawing.Point(579, 14);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(94, 29);
+            this.lblHome.TabIndex = 0;
+            this.lblHome.Text = "HOME";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,7 +327,7 @@ namespace QLCHGB
             this.Controls.Add(this.panelTitleBar);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMain";
+            this.Text = "Home";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panelDesktop.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);

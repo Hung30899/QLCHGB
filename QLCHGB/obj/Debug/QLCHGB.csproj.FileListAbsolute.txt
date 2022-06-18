@@ -115,3 +115,4 @@ C:\Users\H\Desktop\QLCHGB\QLCHGB\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForm
 C:\Users\H\Desktop\QLCHGB\QLCHGB\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\H\Desktop\QLCHGB\QLCHGB\obj\Debug\QLCHGB.frmKH.resources
 C:\Users\H\Desktop\QLCHGB\QLCHGB\obj\Debug\QLCHGB.frmDSTK.resources
+C:\Users\H\Desktop\QLCHGB\QLCHGB\obj\Debug\QLCHGB.frmBCTonKho.resources
